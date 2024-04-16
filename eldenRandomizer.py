@@ -7,9 +7,34 @@ pygame.init()
 
 pygame.display.set_caption("ELDEN RING CHARACTER ATTRIBUTE RANDOMIZER")
 
+#Base Window Settings
+width, height = 1920, 1080
+resolution = (width, height)
+flags = pygame.SCALED
+screen = pygame.display.set_mode(resolution, flags, vsync=1)
+
 # setting font
 title_font = pygame.font.Font('fonts/Mantinia Regular.otf', 96)
 font = pygame.font.Font('fonts/Mantinia Regular.otf', 24)
+
+#Images, etc.
+bg_image = pygame.image.load('images/background.jpg')
+title_img = pygame.image.load('images/title.png')
+textShadow = pygame.image.load('images/textShadow.png')
+shadowSize = textShadow.get_width(), textShadow.get_height()
+##Randomize Button
+randomize_button = pygame.image.load('images/randomizeButton.png').convert_alpha()
+
+#Button Class
+class Button():
+    def __init__(self, x, y, image):
+        self.image = image
+        self.rect = self.image.get_rect()
+        self.rect.topleft = (x,y)
+    
+    def draw(self):
+        #Draw button on screen
+        screen.blit(self.image, (self.rect.x, self.rect.y))
 
 class EldenRandom():
     def __init__(self, randAttribute = random.randrange(0,255), randColor = pygame.Color(0,0,0), randCol_r = random.randrange(0,255), randCol_g = random.randrange(0,255), randCol_b = random.randrange(0,255)):
@@ -19,19 +44,10 @@ class EldenRandom():
         self.randCol_g = randCol_g
         self.randCol_b = randCol_b
 
-bg_image = pygame.image.load('images/background.jpg')
-title_img = pygame.image.load('images/title.png')
-textShadow = pygame.image.load('images/textShadow.png')
-shadowSize = textShadow.get_width(), textShadow.get_height()
-
 def main():
     # Game loop
     running = True
     clock = pygame.time.Clock()
-    width, height = 1920, 1080
-    resolution = (width, height)
-    flags = pygame.SCALED
-    screen = pygame.display.set_mode(resolution, flags, vsync=1)
 
     titlePos = ((resolution[0]/2) - (title_img.get_width()/2), 0 + (title_img.get_height()/4))
     while running:
@@ -46,6 +62,9 @@ def main():
 
         screen.blit(titleRand_shadow, ((resolution[0]/2) - (titleRand_shadow.get_width())/2, titlePos[1] + (titleRand_h*1.25)))
         screen.blit(title_text, ((resolution[0]/2) - titleRand_w/2, titlePos[1] + (titleRand_h*1.5)))
+
+
+
         # Event Handler
         for event in pygame.event.get():
             # Quit Game
