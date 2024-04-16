@@ -22,8 +22,6 @@ bg_image = pygame.image.load('images/background.jpg')
 title_img = pygame.image.load('images/title.png')
 textShadow = pygame.image.load('images/textShadow.png')
 shadowSize = textShadow.get_width(), textShadow.get_height()
-##Randomize Button
-randomize_button = pygame.image.load('images/randomizeButton.png').convert_alpha()
 
 #Button Class
 class Button():
@@ -32,12 +30,23 @@ class Button():
         self.rect = self.image.get_rect()
         self.rect.topleft = (x,y)
     
-    def draw(self):
+    def draw(self, _x, _y):
         #Draw button on screen
-        screen.blit(self.image, (self.rect.x, self.rect.y))
+        self._pos = (_x, _y)
+        screen.blit(self.image, self._pos)
+
+
+##Randomize Button
+randomize_img = pygame.image.load('images/randomizeButton.png').convert_alpha()
+randomize_button = Button(randomize_img.get_width(), randomize_img.get_height(), randomize_img)
+
 
 class EldenRandom():
-    def __init__(self, randAttribute = random.randrange(0,255), randColor = pygame.Color(0,0,0), randCol_r = random.randrange(0,255), randCol_g = random.randrange(0,255), randCol_b = random.randrange(0,255)):
+    def __init__(self, randAttribute = random.randrange(0,255), 
+                 randColor = pygame.Color(0,0,0), 
+                 randCol_r = 0, 
+                 randCol_g = 0, 
+                 randCol_b = 0):
         self.randAttribute = randAttribute
         self.randColor = randColor
         self.randCol_r = randCol_r
@@ -50,6 +59,7 @@ def main():
     clock = pygame.time.Clock()
 
     titlePos = ((resolution[0]/2) - (title_img.get_width()/2), 0 + (title_img.get_height()/4))
+    
     while running:
         #Background and Title
         screen.blit(bg_image, (0,0))
@@ -62,8 +72,7 @@ def main():
 
         screen.blit(titleRand_shadow, ((resolution[0]/2) - (titleRand_shadow.get_width())/2, titlePos[1] + (titleRand_h*1.25)))
         screen.blit(title_text, ((resolution[0]/2) - titleRand_w/2, titlePos[1] + (titleRand_h*1.5)))
-
-
+        randomize_button.draw(((resolution[0]/2) - (randomize_img.get_width()/2)), ((resolution[1]/2) - (randomize_img.get_height()/2)))
 
         # Event Handler
         for event in pygame.event.get():
