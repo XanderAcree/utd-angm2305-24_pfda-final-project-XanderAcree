@@ -122,6 +122,15 @@ class EldenRandom():
     
     # Alter Face & Hair
 
+    ## Adjust Face Template
+    def face_template():
+        bone_structure = random.randrange(6)
+        form_emphasis = EldenRandom.eldenAttribute()
+        apparent_age = EldenRandom.eldenAttribute()
+        facial_aesthetic = EldenRandom.eldenAttribute()
+        output = [bone_structure, form_emphasis, apparent_age, facial_aesthetic]
+        return output
+
     ## Face Structure
     def facial_structure():
         # Facial Balance
@@ -289,12 +298,13 @@ class EldenRandom():
         output = [beard_col, beard_luster, beardRootDark, beardWhiteHairs, beard_stubble]
         return output
     ## Eyelashes
-    def eyelashes(matchHair = False):
+    def eyelashes():
+        matchHair = random.randrange(2)
         _eyelashes = EldenRandom.eldenAttribute(4)
         lash_matchCase = EldenRandom.hair()
-        if matchHair == True: 
+        if matchHair == 1: 
             eyelash_col = lash_matchCase[1]
-        elif matchHair == False:
+        elif matchHair == 0:
             eyelash_col = EldenRandom.eldenColor()
         
         output = [_eyelashes, eyelash_col]
@@ -392,9 +402,66 @@ class EldenRandom():
         output = [tattoo_mark, tattoo_mark_col, tattoo_mark_tweak, eyepatch, eyepatch_col]
         return output
 
+    # Alter Body
+    def body_attributes():
+        match_case = EldenRandom.hair()
+        head = EldenRandom.eldenAttribute()
+        chest = EldenRandom.eldenAttribute()
+        abdomen = EldenRandom.eldenAttribute()
+        arms = EldenRandom.eldenAttribute()
+        legs = EldenRandom.eldenAttribute()
+        body_hair = EldenRandom.eldenAttribute()
+        match_hair = random.randrange(2)
+        if match_hair == 0:
+            body_hair_col = EldenRandom.eldenColor()
+        else: 
+            body_hair_col = match_case[1]
+        
+        musculature = random.randrange(2)
+
+        if head - 128 > 0:
+            if chest + (head-128) > 255:
+                chest = 255
+            else:
+                chest = chest + (head-128)
+        
+        if chest - 90 > 0:
+            if abdomen + (chest - 90) > 255:
+                abdomen = 255
+            else: 
+                abdomen = abdomen + (chest - 90)
+            if arms + (chest - 90) > 255:
+                arms = 255
+            else:
+                arms = arms + (chest - 90)
+
+        if abdomen - 90 > 0:
+            if legs + (abdomen - 90) > 255:
+                legs = 255
+            else:
+                legs = legs + (abdomen - 90)
+            if chest + (abdomen - 90) > 255:
+                chest = 255
+            else:
+                chest = chest + (abdomen - 90)
+
+        if arms - 90 > 0:
+            if chest + (arms - 90) > 255:
+                chest = 255
+            else:
+                chest = chest + (arms - 90)
+        
+        if legs - 90 > 0:
+            if abdomen + (legs - 90) > 255:
+                abdomen = 255
+            else: 
+                abdomen = abdomen + (legs - 90)
+        
+        output = [head, chest, abdomen, arms, legs, body_hair, body_hair_col, musculature]
+        return output
 
 def main():
-    print(EldenRandom.eyes_col())
+    print(EldenRandom.body_attributes())
 
 if __name__ == "__main__":
     main()
