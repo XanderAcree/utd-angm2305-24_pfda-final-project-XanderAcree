@@ -460,8 +460,8 @@ class EldenRandom():
         output = [head, chest, abdomen, arms, legs, body_hair, body_hair_col, musculature]
         return output
 
-def main():
-    print(EldenRandom.body_attributes())
+#def main():
+#    print(EldenRandom.body_attributes())
 
-if __name__ == "__main__":
-    main()
+#if __name__ == "__main__":
+#    main()
