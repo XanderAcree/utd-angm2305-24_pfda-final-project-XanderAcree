@@ -1,6 +1,7 @@
 import pygame
 from pygame.locals import *
-import random
+import button
+import EldenRandom
 
 # pygame setup
 pygame.init()
@@ -24,34 +25,22 @@ textShadow = pygame.image.load('images/textShadow.png')
 shadowSize = textShadow.get_width(), textShadow.get_height()
 
 #Button Class
-class Button():
-    def __init__(self, x, y, image):
-        self.image = image
-        self.rect = self.image.get_rect()
-        self.rect.topleft = (x,y)
-    
-    def draw(self, _x, _y):
-        #Draw button on screen
-        self._pos = (_x, _y)
-        screen.blit(self.image, self._pos)
+#class Button():
+#    def __init__(self, x, y, image):
+#        self.image = image
+#        self.rect = self.image.get_rect()
+#        self.rect.topleft = (x,y)
+#    
+#    def draw(self, _x, _y):
+#        #Draw button on screen
+#        self._pos = (_x, _y)
+#        screen.blit(self.image, self._pos)
 
 
 ##Randomize Button
 randomize_img = pygame.image.load('images/randomizeButton.png').convert_alpha()
-randomize_button = Button(randomize_img.get_width(), randomize_img.get_height(), randomize_img)
-
-
-class EldenRandom():
-    def __init__(self, randAttribute = random.randrange(0,255), 
-                 randColor = pygame.Color(0,0,0), 
-                 randCol_r = 0, 
-                 randCol_g = 0, 
-                 randCol_b = 0):
-        self.randAttribute = randAttribute
-        self.randColor = randColor
-        self.randCol_r = randCol_r
-        self.randCol_g = randCol_g
-        self.randCol_b = randCol_b
+randomize_button = button.Button(((resolution[0]/2) - (randomize_img.get_width()/2)), 
+                                 ((resolution[1]/2) - (randomize_img.get_height()/2)), randomize_img, 1)
 
 def main():
     # Game loop
@@ -72,7 +61,8 @@ def main():
 
         screen.blit(titleRand_shadow, ((resolution[0]/2) - (titleRand_shadow.get_width())/2, titlePos[1] + (titleRand_h*1.25)))
         screen.blit(title_text, ((resolution[0]/2) - titleRand_w/2, titlePos[1] + (titleRand_h*1.5)))
-        randomize_button.draw(((resolution[0]/2) - (randomize_img.get_width()/2)), ((resolution[1]/2) - (randomize_img.get_height()/2)))
+        #randomize_button.draw(((resolution[0]/2) - (randomize_img.get_width()/2)), ((resolution[1]/2) - (randomize_img.get_height()/2)))
+        randomize_button.draw(screen)
 
         # Event Handler
         for event in pygame.event.get():
