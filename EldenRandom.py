@@ -217,7 +217,6 @@ class EldenRandom():
         output = [facial_balance, forehead_glabella, brow_ridge, eyes, nose_ridge, nostrils, cheeks, lips, mouth, chin, jaw]
         return output
 
-
     ## Hair
     def hair():
         hairstyle = EldenRandom.eldenAttribute(32)
@@ -226,63 +225,69 @@ class EldenRandom():
         root_darkness = EldenRandom.eldenAttribute(255)
         white_hairs = EldenRandom.eldenAttribute(255)
         return [hairstyle, hair_col, luster, root_darkness, white_hairs]
-        
     ## Eyebrows
-    def eyebrows(matchBrowCol = True, matchLuster = True, matchRootDark = True, matchWhiteHairs = True):
+    def eyebrows():
+        matchCase = [0,0,0,0]
         brow_matchCase = EldenRandom.hair()
         brow = EldenRandom.eldenAttribute(17) + 1
-        if matchBrowCol == True:
+
+        for i in range(4):
+            randomBool = EldenRandom.eldenAttribute(2)
+            matchCase[i] = randomBool
+        if matchCase[0] == 1:
             brow_col = brow_matchCase[1]
-        elif matchBrowCol == False:
+        elif matchCase[0] == 0:
             brow_col = EldenRandom.eldenColor(False)
         
-        if matchLuster == True:
+        if matchCase[1] == 1:
             brow_luster = brow_matchCase[2]
-        elif matchLuster == False:
+        elif matchCase[1] == 0:
             brow_luster = EldenRandom.eldenAttribute(255)
         
-        if matchRootDark == True: 
+        if matchCase[2] == 1: 
             brow_root_dark = brow_matchCase[3]
-        elif matchRootDark == False: 
+        elif matchCase[2] == 0: 
             brow_root_dark = EldenRandom.eldenAttribute(255)
         
-        if matchWhiteHairs == True:
+        if matchCase[3] == 1:
             brow_white_hairs = brow_matchCase[4]
-        elif matchWhiteHairs == False:
+        elif matchCase[3] == 0:
             brow_white_hairs = EldenRandom.eldenAttribute(255)
         
-        output = [brow_col, brow_luster, brow_root_dark, brow_white_hairs]
+        output = [brow, brow_col, brow_luster, brow_root_dark, brow_white_hairs]
         return output
-
     ## Facial Hair
-    def facialHair(matchFacialCol = True, matchLuster = True, matchRootDark = True, matchWhiteHairs = True):
+    def facialHair():
         beard = EldenRandom.eldenAttribute(12)
+        match_case = [0,0,0,0]
+        for i in range(4):
+            randBool = EldenRandom.eldenAttribute(2)
+            match_case[i] = randBool
         facial_matchCase = EldenRandom.hair()
-        if matchFacialCol == True:
+        if match_case[0] == True:
             beard_col = facial_matchCase[1]
-        elif matchFacialCol == False:
+        elif match_case[0] == False:
             beard_col = EldenRandom.eldenColor(False)
         
-        if matchLuster == True:
+        if match_case[1] == True:
             beard_luster = facial_matchCase[2]
-        elif matchLuster == False:
+        elif match_case[1] == False:
             beard_luster = EldenRandom.eldenAttribute(255)
         
-        if matchRootDark == True:
+        if match_case[2] == True:
             beardRootDark = facial_matchCase[3]
-        elif matchRootDark == False:
+        elif match_case[2] == False:
             beardRootDark = EldenRandom.eldenAttribute(255)
         
-        if matchWhiteHairs == True:
+        if match_case[3] == True:
             beardWhiteHairs = facial_matchCase[4]
-        elif matchWhiteHairs == False:
+        elif match_case[3] == False:
             beardWhiteHairs = EldenRandom.eldenAttribute(255)
 
         beard_stubble = EldenRandom.eldenAttribute(255)
         
         output = [beard_col, beard_luster, beardRootDark, beardWhiteHairs, beard_stubble]
         return output
-
     ## Eyelashes
     def eyelashes(matchHair = False):
         _eyelashes = EldenRandom.eldenAttribute(4)
@@ -294,17 +299,16 @@ class EldenRandom():
         
         output = [_eyelashes, eyelash_col]
         return output
-
     ## Eyes
     def eyes_col():
-        matchEye = []
+        matchEye = [True, True, True, True, True, True]
         i = 0
         for i in range(6):
             match_eye = EldenRandom.eldenAttribute(2)
             if match_eye == 0:
-                matchEye.append(False)
+                matchEye[i] = False
             else:
-                matchEye.append(True)
+                matchEye[i] = True
 
         iris_size_r = EldenRandom.eldenAttribute(255)
         iris_col_r = EldenRandom.eldenColor()
@@ -325,7 +329,7 @@ class EldenRandom():
         
         if matchEye[2] == True:
             eye_clouding_l = eye_clouding_r
-        elif match_eye[2] == False:
+        elif matchEye[2] == False:
             eye_clouding_l = EldenRandom.eldenAttribute(255)
         
         if matchEye[3] == True:
@@ -355,7 +359,6 @@ class EldenRandom():
         dark_circles_col = EldenRandom.eldenColor()
         output = [pores, skin_luster, dark_circles, dark_circles_col]
         return output
-
     ## Cosmetics
     def cosmetics():
         eyeliner, eyeliner_col = EldenRandom.eldenAttribute(255), EldenRandom.eldenColor()
@@ -370,25 +373,28 @@ class EldenRandom():
                   cheeks, cheeks_col, 
                   lipstick, lipstick_col]
         return output
-
     ## Tattoo/Mark/Eyepatch
     def face_misc():
         tattoo_mark = EldenRandom.eldenAttribute(38)
         tattoo_mark_col = EldenRandom.eldenColor()
+
+        #Variables for tattoo_mark_tweak
         pos_vert = EldenRandom.eldenAttribute(255)
         pos_horiz = EldenRandom.eldenAttribute(255)
         angle = EldenRandom.eldenAttribute(255)
         expansion = EldenRandom.eldenAttribute(255)
         _flip = EldenRandom.eldenAttribute(2)
+
         tattoo_mark_tweak = [pos_vert, pos_horiz, angle, expansion, _flip]
         eyepatch = EldenRandom.eldenAttribute(4)
         eyepatch_col = EldenRandom.eldenColor()
         
-        output = tattoo_mark
+        output = [tattoo_mark, tattoo_mark_col, tattoo_mark_tweak, eyepatch, eyepatch_col]
+        return output
 
 
 def main():
-    print(EldenRandom.facial_structure())
+    print(EldenRandom.eyes_col())
 
 if __name__ == "__main__":
     main()
