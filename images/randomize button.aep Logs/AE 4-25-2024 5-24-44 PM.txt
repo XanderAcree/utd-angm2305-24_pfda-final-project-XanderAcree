@@ -1,0 +1,17 @@
+Adobe After Effects v24.3 Windows 64 render log for project “randomize button.aep”
+
+Rendering started on 4/25/2024 at 5:24:44 PM
+
+  4/25/2024 5:24:44 PM: Starting composition “randomizeButton”.
+
+  Output To: C:\Users\mlgil\OneDrive\Documents\GitHub\utd-angm2305-24_pfda-final-project-XanderAcree\images\randomizeButton\randomizeButton.mp4    4/25/2024 5:24:47 PM: Finished composition “randomizeButton”.
+
+
+  4/25/2024 5:24:47 PM: Starting composition “randomizeButton”.
+
+  Output To: C:\Users\mlgil\OneDrive\Documents\GitHub\utd-angm2305-24_pfda-final-project-XanderAcree\images\randomizeButton\randomizeButton\randomizeButton_[#####].png    4/25/2024 5:24:48 PM: Finished composition “randomizeButton”.
+
+
+  Total Time Elapsed: 4 Seconds
+Log closed on 4/25/2024 at 5:24:48 PM
+
