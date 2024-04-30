@@ -491,32 +491,15 @@ class EldenRandom():
         return output
     
     #returns all of the values/lists
-    def returnAll():
-        EldenOrigin = EldenRandom.origin()
-        EldenBodyType = EldenRandom.bodyType()
-        EldenKeepsake = EldenRandom.keepsake()
-        EldenAge = EldenRandom.age()
-        EldenVoice = EldenRandom.voice()
-        EldenSkinColor = EldenRandom.skinColor()
-        EldenFaceTemplate = EldenRandom.face_template()
-        EldenFacialStructure = EldenRandom.facial_structure()
-        EldenHair = EldenRandom.hair()
-        EldenEyebrows = EldenRandom.eyebrows()
-        EldenFacialHair = EldenRandom.facialHair()
-        EldenEyelashes = EldenRandom.eyelashes()
-        EldenEyesCol = EldenRandom.eyes_col()
-        EldenSkinFeatures = EldenRandom.skin_features()
-        EldenCosmetics = EldenRandom.cosmetics()
-        EldenFaceMisc = EldenRandom.face_misc()
-        EldenBodyAttributes = EldenRandom.body_attributes()
-        
-        returnList = [EldenOrigin,EldenBodyType,EldenKeepsake,EldenAge,EldenVoice,EldenSkinColor,EldenFaceTemplate,
-                      EldenFacialStructure,EldenHair,EldenEyebrows,EldenFacialHair,EldenEyelashes,EldenEyesCol,EldenSkinFeatures,
-                      EldenCosmetics,EldenFaceMisc,EldenBodyAttributes]
+    def returnAll():     
+        returnList = [EldenRandom.origin(),EldenRandom.bodyType(),EldenRandom.keepsake(),EldenRandom.age(),EldenRandom.voice(),
+                      EldenRandom.skinColor(),EldenRandom.face_template(),EldenRandom.facial_structure(),EldenRandom.hair(),
+                      EldenRandom.eyebrows(),EldenRandom.facialHair(),EldenRandom.eyelashes(),EldenRandom.eyes_col(),
+                      EldenRandom.skin_features(),EldenRandom.cosmetics(),EldenRandom.face_misc(),EldenRandom.body_attributes()]
         return returnList
 
-def main():
-    print(EldenRandom.returnAll())
+#def main():
+#    print(EldenRandom.returnAll())
 
-if __name__ == "__main__":
-    main() 
+#if __name__ == "__main__":
+#    main() 
