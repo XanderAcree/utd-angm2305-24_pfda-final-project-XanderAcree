@@ -79,7 +79,7 @@ class EldenRandom():
                      7: 'Prisoner',
                      8: 'Confessor',
                      9: 'Wretch'}
-        return _origin(randRange)
+        return _origin.get(randRange)
     ## Body Type -- Whether you want your character to look more masculine or feminine
 
     #### EldenRandom.all index: 1 ([1][0][0])
@@ -87,7 +87,7 @@ class EldenRandom():
         randRange = EldenRandom.eldenAttribute(2)
         _bodyType = {0: 'Type A',
                     1: 'Type B'}
-        return _bodyType(randRange)   
+        return _bodyType.get(randRange)   
     ## Keepsake -- Optional choice, essentially gives your character an additiona item that they'll start with
 
     #### EldenRandom.all index: 2 ([2][0][0])
@@ -104,7 +104,7 @@ class EldenRandom():
                      8: 'Boiled Prawn',
                      9: 'Shabriri\'s Woe'}
         
-        return _keepsake(randRange)
+        return _keepsake.get(randRange)
     
     # Detailed Appearance
 
@@ -114,7 +114,7 @@ class EldenRandom():
         _age = {0: 'Young', 
                 1: 'Mature', 
                 2: 'Aged'}
-        return _age(randRange)
+        return _age.get(randRange)
     
     #### EldenRandom.all index: 4 ([4][0][0])
     def voice():
@@ -125,7 +125,7 @@ class EldenRandom():
                   3: 'Mature Voice 2',
                   4: 'Aged Voice 1',
                   5: 'Aged Voice 2'}
-        return _voice(randRange)
+        return _voice.get(randRange)
     
     #### EldenRandom.all index: 5 [5][0][0]
     def skinColor():
@@ -492,14 +492,31 @@ class EldenRandom():
     
     #returns all of the values/lists
     def returnAll():
-        returnList = [EldenRandom.origin(),EldenRandom.bodyType(), EldenRandom.keepsake(), EldenRandom.age(), EldenRandom.voice(), 
-                      EldenRandom.skinColor(), EldenRandom.face_template(), EldenRandom.facial_structure(), EldenRandom.hair(), 
-                      EldenRandom.eyebrows(), EldenRandom.facialHair(), EldenRandom.eyelashes(), EldenRandom.eyes_col(),
-                      EldenRandom.skin_features(), EldenRandom.cosmetics(), EldenRandom.face_misc(), EldenRandom.body_attributes()]
+        EldenOrigin = EldenRandom.origin()
+        EldenBodyType = EldenRandom.bodyType()
+        EldenKeepsake = EldenRandom.keepsake()
+        EldenAge = EldenRandom.age()
+        EldenVoice = EldenRandom.voice()
+        EldenSkinColor = EldenRandom.skinColor()
+        EldenFaceTemplate = EldenRandom.face_template()
+        EldenFacialStructure = EldenRandom.facial_structure()
+        EldenHair = EldenRandom.hair()
+        EldenEyebrows = EldenRandom.eyebrows()
+        EldenFacialHair = EldenRandom.facialHair()
+        EldenEyelashes = EldenRandom.eyelashes()
+        EldenEyesCol = EldenRandom.eyes_col()
+        EldenSkinFeatures = EldenRandom.skin_features()
+        EldenCosmetics = EldenRandom.cosmetics()
+        EldenFaceMisc = EldenRandom.face_misc()
+        EldenBodyAttributes = EldenRandom.body_attributes()
+        
+        returnList = [EldenOrigin,EldenBodyType,EldenKeepsake,EldenAge,EldenVoice,EldenSkinColor,EldenFaceTemplate,
+                      EldenFacialStructure,EldenHair,EldenEyebrows,EldenFacialHair,EldenEyelashes,EldenEyesCol,EldenSkinFeatures,
+                      EldenCosmetics,EldenFaceMisc,EldenBodyAttributes]
         return returnList
 
-# def main():
-#     print(EldenRandom.body_attributes())
+def main():
+    print(EldenRandom.returnAll())
 
-# if __name__ == "__main__":
-#     main() 
+if __name__ == "__main__":
+    main() 
