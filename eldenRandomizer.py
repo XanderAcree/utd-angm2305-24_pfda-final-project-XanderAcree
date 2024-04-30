@@ -10,7 +10,7 @@ pygame.init()
 pygame.display.set_caption("ELDEN RING CHARACTER ATTRIBUTE RANDOMIZER")
 
 #Base Window Settings
-width, height = 1920, 1080
+width, height = 1920, 1200
 resolution = (width, height)
 flags = pygame.SCALED
 screen = pygame.display.set_mode(resolution, flags, vsync=1)
@@ -24,6 +24,8 @@ bg_image = pygame.image.load('images/elden ring.png')
 title_img = pygame.image.load('images/title.png')
 #textShadow = pygame.image.load('images/textShadow.png')
 #shadowSize = textShadow.get_width(), textShadow.get_height()
+randResults_grad = pygame.image.load('images/randomizerScreen_gradient.png')
+#randResults_screen = pygame.transform.scale(randResults_grad, (1920, 1200))
 
 #Button Class
 #class Button():
@@ -54,6 +56,8 @@ def main():
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
             isRandButtonClicked = True
             screen.fill((24,21,15))
+            screen.blit(randResults_grad, (((resolution[0]) - (randResults_grad.get_width() - 190)),
+                                           ((resolution[1]) - (randResults_grad.get_height() - 120))))
 
         elif randomize_button.draw(screen) == False:
             screen.fill((0,0,0))
@@ -81,6 +85,8 @@ def main():
             # Quit Game
             if event.type == pygame.QUIT: #or (event.type == KEYDOWN and pygame.key.get_pressed(K_q))
                 running = False
+            if event.type == pygame.KEYDOWN and pygame.key.get_pressed()[pygame.K_q]:
+                isRandButtonClicked = False
 
         pygame.display.update()
 

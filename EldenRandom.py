@@ -65,6 +65,8 @@ class EldenRandom():
     
     # Base
     ## Origin: The class that you'll start off as in Elden Ring when creating a new character.
+
+    #### EldenRandom.all index: 0 ([0][0][0])
     def origin():
         randRange = EldenRandom.eldenAttribute(10)
         _origin = {0: 'Vagabond',
@@ -79,12 +81,16 @@ class EldenRandom():
                      9: 'Wretch'}
         return _origin(randRange)
     ## Body Type -- Whether you want your character to look more masculine or feminine
+
+    #### EldenRandom.all index: 1 ([1][0][0])
     def bodyType():
         randRange = EldenRandom.eldenAttribute(2)
         _bodyType = {0: 'Type A',
                     1: 'Type B'}
         return _bodyType(randRange)   
     ## Keepsake -- Optional choice, essentially gives your character an additiona item that they'll start with
+
+    #### EldenRandom.all index: 2 ([2][0][0])
     def keepsake():
         randRange = EldenRandom.eldenAttribute(10)
         _keepsake = {0: 'None',
@@ -101,12 +107,16 @@ class EldenRandom():
         return _keepsake(randRange)
     
     # Detailed Appearance
+
+    #### EldenRandom.all index: 3 ([3][0][0])
     def age():
         randRange = EldenRandom.eldenAttribute(3)
         _age = {0: 'Young', 
                 1: 'Mature', 
                 2: 'Aged'}
         return _age(randRange)
+    
+    #### EldenRandom.all index: 4 ([4][0][0])
     def voice():
         randRange = EldenRandom.eldenAttribute(6)
         _voice = {0: 'Young Voice 1',
@@ -116,6 +126,8 @@ class EldenRandom():
                   4: 'Aged Voice 1',
                   5: 'Aged Voice 2'}
         return _voice(randRange)
+    
+    #### EldenRandom.all index: 5 [5][0][0]
     def skinColor():
         _skinColor = EldenRandom.eldenColor(False)
         return _skinColor
@@ -123,15 +135,19 @@ class EldenRandom():
     # Alter Face & Hair
 
     ## Adjust Face Template
+
+    #### EldenRandom.all index: 6 [6][0][0]
     def face_template():
         bone_structure = random.randrange(6)
         form_emphasis = EldenRandom.eldenAttribute()
         apparent_age = EldenRandom.eldenAttribute()
         facial_aesthetic = EldenRandom.eldenAttribute()
-        output = [bone_structure, form_emphasis, apparent_age, facial_aesthetic]
+        output = [bone_structure, form_emphasis, apparent_age, facial_aesthetic] #[6][0-3][0]
         return output
 
     ## Face Structure
+
+    #### EldenRandom.all index: 7 [x][o][o]
     def facial_structure():
         # Facial Balance
         nose_size = EldenRandom.eldenAttribute(255)
@@ -140,7 +156,8 @@ class EldenRandom():
         vert_face_ratio = EldenRandom.eldenAttribute(255)
         facial_feature_slant = EldenRandom.eldenAttribute(255)
         horiz_face_ratio = EldenRandom.eldenAttribute(255)
-        facial_balance = [nose_size, nose_forehead_ratio, face_protrusion, vert_face_ratio, facial_feature_slant, horiz_face_ratio]
+        facial_balance = [nose_size, nose_forehead_ratio, face_protrusion, 
+                          vert_face_ratio, facial_feature_slant, horiz_face_ratio] #[7][0][0-5]
         
         #Forehead/Glabella
         forehead_depth = EldenRandom.eldenAttribute(255)
@@ -149,20 +166,21 @@ class EldenRandom():
         bridge_protrusion_1 = EldenRandom.eldenAttribute(255)
         bridge_protrusion_2 = EldenRandom.eldenAttribute(255)
         nose_bridge_width = EldenRandom.eldenAttribute(255)
-        forehead_glabella = [forehead_depth, forehead_protrusion, nose_bridge_height, bridge_protrusion_1, bridge_protrusion_2, nose_bridge_width]
+        forehead_glabella = [forehead_depth, forehead_protrusion, nose_bridge_height, 
+                             bridge_protrusion_1, bridge_protrusion_2, nose_bridge_width] #[7][1][0-5]
 
         #Brow Ridge
         brow_ridge_height = EldenRandom.eldenAttribute(255)
         inner_brow_ridge = EldenRandom.eldenAttribute(255)
         outer_brow_ridge = EldenRandom.eldenAttribute(255)
-        brow_ridge = [brow_ridge_height, inner_brow_ridge, outer_brow_ridge]
+        brow_ridge = [brow_ridge_height, inner_brow_ridge, outer_brow_ridge] #[7][2][0-2]
 
         #Eyes
         eye_pos = EldenRandom.eldenAttribute(255)
         eye_size = EldenRandom.eldenAttribute(255)
         eye_slant = EldenRandom.eldenAttribute(255)
         eye_spacing = EldenRandom.eldenAttribute(255)
-        eyes = [eye_pos, eye_size, eye_slant, eye_spacing]
+        eyes = [eye_pos, eye_size, eye_slant, eye_spacing] #[7][3][0-3]
 
         #Nose Ridge
         nose_ridge_depth = EldenRandom.eldenAttribute(255)
@@ -172,13 +190,14 @@ class EldenRandom():
         nose_protrusion = EldenRandom.eldenAttribute(255)
         nose_height = EldenRandom.eldenAttribute(255)
         nose_slant = EldenRandom.eldenAttribute(255)
-        nose_ridge = [nose_ridge_depth, nose_ridge_len, nose_pos, nose_tip_height, nose_protrusion, nose_height, nose_slant]
+        nose_ridge = [nose_ridge_depth, nose_ridge_len, nose_pos, 
+                      nose_tip_height, nose_protrusion, nose_height, nose_slant] #[7][4][0-6]
 
         #Nostrils
         nostril_slant = EldenRandom.eldenAttribute(255)
         nostril_size = EldenRandom.eldenAttribute(255)
         nostril_width = EldenRandom.eldenAttribute(255)
-        nostrils = [nostril_slant, nostril_size, nostril_width]
+        nostrils = [nostril_slant, nostril_size, nostril_width] #[7][5][0-2]
 
         #Cheeks
         cheek_height = EldenRandom.eldenAttribute(255)
@@ -186,7 +205,7 @@ class EldenRandom():
         cheek_width = EldenRandom.eldenAttribute(255)
         cheek_protrusion = EldenRandom.eldenAttribute(255)
         _cheeks = EldenRandom.eldenAttribute(255)
-        cheeks = [cheek_height, cheek_depth, cheek_width, cheek_protrusion, _cheeks]
+        cheeks = [cheek_height, cheek_depth, cheek_width, cheek_protrusion, _cheeks] #[7][6][0-5]
 
         #Lips
         lip_shape = EldenRandom.eldenAttribute(255)
@@ -195,7 +214,7 @@ class EldenRandom():
         lip_size = EldenRandom.eldenAttribute(255)
         lip_protrusion = EldenRandom.eldenAttribute(255)
         lip_thickness = EldenRandom.eldenAttribute(255)
-        lips = [lip_shape, mouth_expression, lip_fullness, lip_size, lip_protrusion, lip_thickness]
+        lips = [lip_shape, mouth_expression, lip_fullness, lip_size, lip_protrusion, lip_thickness] #[7][7][0-5]
 
         #Mouth
         mouth_protrusion = EldenRandom.eldenAttribute(255)
@@ -204,7 +223,7 @@ class EldenRandom():
         mouth_pos = EldenRandom.eldenAttribute(255)
         mouth_width = EldenRandom.eldenAttribute(255)
         mouth_chin_dist = EldenRandom.eldenAttribute(255)
-        mouth = [mouth_protrusion, mouth_slant, occlusion, mouth_pos, mouth_width, mouth_chin_dist]
+        mouth = [mouth_protrusion, mouth_slant, occlusion, mouth_pos, mouth_width, mouth_chin_dist] #[7][8][0-5]
 
         #Chin
         chin_tip_pos = EldenRandom.eldenAttribute(255)
@@ -214,27 +233,33 @@ class EldenRandom():
         chin_size = EldenRandom.eldenAttribute(255)
         chin_height = EldenRandom.eldenAttribute(255)
         chin_width = EldenRandom.eldenAttribute(255)
-        chin = [chin_tip_pos, chin_len, chin_protrusion, chin_depth, chin_size, chin_height, chin_width]
+        chin = [chin_tip_pos, chin_len, chin_protrusion, chin_depth, chin_size, chin_height, chin_width] #[7][9][0-6]
 
         #Jaw
         jaw_protrusion = EldenRandom.eldenAttribute(255)
         jaw_width = EldenRandom.eldenAttribute(255)
         lower_jaw = EldenRandom.eldenAttribute(255)
         jaw_contour = EldenRandom.eldenAttribute(255)
-        jaw = [jaw_protrusion, jaw_width, lower_jaw, jaw_contour]
+        jaw = [jaw_protrusion, jaw_width, lower_jaw, jaw_contour] #[7][10][0-3]
 
-        output = [facial_balance, forehead_glabella, brow_ridge, eyes, nose_ridge, nostrils, cheeks, lips, mouth, chin, jaw]
+        output = [facial_balance, forehead_glabella, brow_ridge, 
+                  eyes, nose_ridge, nostrils, cheeks, lips, mouth, 
+                  chin, jaw] #[7][0-10]
         return output
 
     ## Hair
+
+    #### EldenRandom.all index: 8 [8][0][0]
     def hair():
         hairstyle = EldenRandom.eldenAttribute(32)
         hair_col = EldenRandom.eldenColor(False)
         luster = EldenRandom.eldenAttribute(255)
         root_darkness = EldenRandom.eldenAttribute(255)
         white_hairs = EldenRandom.eldenAttribute(255)
-        return [hairstyle, hair_col, luster, root_darkness, white_hairs]
+        return [hairstyle, hair_col, luster, root_darkness, white_hairs] #[8][0-4]
     ## Eyebrows
+
+    #### EldenRandom.all index: 9 [9][0][0]
     def eyebrows():
         matchCase = [0,0,0,0]
         brow_matchCase = EldenRandom.hair()
@@ -263,9 +288,11 @@ class EldenRandom():
         elif matchCase[3] == 0:
             brow_white_hairs = EldenRandom.eldenAttribute(255)
         
-        output = [brow, brow_col, brow_luster, brow_root_dark, brow_white_hairs]
+        output = [brow, brow_col, brow_luster, brow_root_dark, brow_white_hairs] #[9][0-4]
         return output
     ## Facial Hair
+
+    #### EldenRandom.all index: 10 [10][0][0]
     def facialHair():
         beard = EldenRandom.eldenAttribute(12)
         match_case = [0,0,0,0]
@@ -295,9 +322,11 @@ class EldenRandom():
 
         beard_stubble = EldenRandom.eldenAttribute(255)
         
-        output = [beard_col, beard_luster, beardRootDark, beardWhiteHairs, beard_stubble]
+        output = [beard_col, beard_luster, beardRootDark, beardWhiteHairs, beard_stubble] #[10][0-4]
         return output
     ## Eyelashes
+
+    #### EldenRandom.all index: 11 [11][0][0]
     def eyelashes():
         matchHair = random.randrange(2)
         _eyelashes = EldenRandom.eldenAttribute(4)
@@ -307,9 +336,11 @@ class EldenRandom():
         elif matchHair == 0:
             eyelash_col = EldenRandom.eldenColor()
         
-        output = [_eyelashes, eyelash_col]
+        output = [_eyelashes, eyelash_col] #[11][0-1]
         return output
     ## Eyes
+
+    #### EldenRandom.all index: 12 [12][0][0]
     def eyes_col():
         matchEye = [True, True, True, True, True, True]
         i = 0
@@ -358,18 +389,20 @@ class EldenRandom():
             eye_pos_l = EldenRandom.eldenAttribute(255)
         
         output = [iris_size_r, iris_col_r, eye_clouding_r, clouding_col_r, eye_white_r, eye_pos_r,
-                  iris_size_l, iris_col_l, eye_clouding_l, clouding_col_l, eye_white_l, eye_pos_l]
+                  iris_size_l, iris_col_l, eye_clouding_l, clouding_col_l, eye_white_l, eye_pos_l] #[12][0-11]
         return output
 
     ## Skin Features
+    #### EldenRandom.all index: 13 [13][0][0]
     def skin_features():
         pores = EldenRandom.eldenAttribute(255)
         skin_luster = EldenRandom.eldenAttribute(255)
         dark_circles = EldenRandom.eldenAttribute(255)
         dark_circles_col = EldenRandom.eldenColor()
-        output = [pores, skin_luster, dark_circles, dark_circles_col]
+        output = [pores, skin_luster, dark_circles, dark_circles_col] #[13][0-3]
         return output
     ## Cosmetics
+    #### EldenRandom.all index: 14 [14][0][0]
     def cosmetics():
         eyeliner, eyeliner_col = EldenRandom.eldenAttribute(255), EldenRandom.eldenColor()
         eyeshadow_upper, eyeshadow_upper_col = EldenRandom.eldenAttribute(255), EldenRandom.eldenColor()
@@ -381,9 +414,10 @@ class EldenRandom():
                   eyeshadow_upper, eyeshadow_upper_col, 
                   eyeshadow_lower, eyeshadow_lower_col, 
                   cheeks, cheeks_col, 
-                  lipstick, lipstick_col]
+                  lipstick, lipstick_col] #[14][0-9]
         return output
     ## Tattoo/Mark/Eyepatch
+    #### EldenRandom.all index: 15 [15][0][0]
     def face_misc():
         tattoo_mark = EldenRandom.eldenAttribute(38)
         tattoo_mark_col = EldenRandom.eldenColor()
@@ -399,10 +433,11 @@ class EldenRandom():
         eyepatch = EldenRandom.eldenAttribute(4)
         eyepatch_col = EldenRandom.eldenColor()
         
-        output = [tattoo_mark, tattoo_mark_col, tattoo_mark_tweak, eyepatch, eyepatch_col]
+        output = [tattoo_mark, tattoo_mark_col, tattoo_mark_tweak, eyepatch, eyepatch_col] #[15][0-4]
         return output
 
     # Alter Body
+    #### EldenRandom.all index: 16 [16][0][0]
     def body_attributes():
         match_case = EldenRandom.hair()
         head = EldenRandom.eldenAttribute()
@@ -420,48 +455,51 @@ class EldenRandom():
         musculature = random.randrange(2)
 
         if head - 128 > 0:
+            if chest - 90 > 0:
+                if abdomen - 90 > 0:
+                    if arms - 90 > 0:
+                        if legs - 90 > 0:
+                            if abdomen + (legs - 90) > 255:
+                                abdomen = 255
+                            else: 
+                                abdomen = abdomen + (legs - 90)
+                        if chest + (arms - 90) > 255:
+                            chest = 255
+                        else:
+                            chest = chest + (arms - 90)
+                    if legs + (abdomen - 90) > 255:
+                        legs = 255
+                    else:
+                        legs = legs + (abdomen - 90)
+                    if chest + (abdomen - 90) > 255:
+                        chest = 255
+                    else:
+                        chest = chest + (abdomen - 90)
+                if abdomen + (chest - 90) > 255:
+                    abdomen = 255
+                else: 
+                    abdomen = abdomen + (chest - 90)
+                if arms + (chest - 90) > 255:
+                    arms = 255
+                else:
+                    arms = arms + (chest - 90)
             if chest + (head-128) > 255:
                 chest = 255
             else:
                 chest = chest + (head-128)
-        
-        if chest - 90 > 0:
-            if abdomen + (chest - 90) > 255:
-                abdomen = 255
-            else: 
-                abdomen = abdomen + (chest - 90)
-            if arms + (chest - 90) > 255:
-                arms = 255
-            else:
-                arms = arms + (chest - 90)
-
-        if abdomen - 90 > 0:
-            if legs + (abdomen - 90) > 255:
-                legs = 255
-            else:
-                legs = legs + (abdomen - 90)
-            if chest + (abdomen - 90) > 255:
-                chest = 255
-            else:
-                chest = chest + (abdomen - 90)
-
-        if arms - 90 > 0:
-            if chest + (arms - 90) > 255:
-                chest = 255
-            else:
-                chest = chest + (arms - 90)
-        
-        if legs - 90 > 0:
-            if abdomen + (legs - 90) > 255:
-                abdomen = 255
-            else: 
-                abdomen = abdomen + (legs - 90)
-        
-        output = [head, chest, abdomen, arms, legs, body_hair, body_hair_col, musculature]
+        output = [head, chest, abdomen, arms, legs, body_hair, body_hair_col, musculature] #[16][0-7]
         return output
+    
+    #returns all of the values/lists
+    def returnAll():
+        returnList = [EldenRandom.origin(),EldenRandom.bodyType(), EldenRandom.keepsake(), EldenRandom.age(), EldenRandom.voice(), 
+                      EldenRandom.skinColor(), EldenRandom.face_template(), EldenRandom.facial_structure(), EldenRandom.hair(), 
+                      EldenRandom.eyebrows(), EldenRandom.facialHair(), EldenRandom.eyelashes(), EldenRandom.eyes_col(),
+                      EldenRandom.skin_features(), EldenRandom.cosmetics(), EldenRandom.face_misc(), EldenRandom.body_attributes()]
+        return returnList
 
-#def main():
-#    print(EldenRandom.body_attributes())
+# def main():
+#     print(EldenRandom.body_attributes())
 
-#if __name__ == "__main__":
-#    main() 
+# if __name__ == "__main__":
+#     main() 
