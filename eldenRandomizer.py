@@ -17,8 +17,8 @@ screen = pygame.display.set_mode(resolution, flags, vsync=1)
 
 # setting font
 title_font = pygame.font.Font('fonts/Mantinia Regular.otf', 96)
-font = pygame.font.Font('fonts/Mantinia Regular.otf', 24)
-button_font = pygame.font.Font('fonts/Mantinia Regular.otf', 27)
+font = pygame.font.Font('fonts/Garamond Premier Pro/Garamond Premier Pro Regular.ttf', 24)
+button_font = pygame.font.Font('fonts/Garamond Premier Pro/Garamond Premier Pro Regular.ttf', 27)
 
 #Images, etc.
 bg_image = pygame.image.load('images/elden ring.png')
@@ -55,11 +55,45 @@ keepsake_img = pygame.image.load('images/ER_keepsake.png').convert_alpha()
 keepsake_button = button.Button((keepsake_img.get_width()/2) - (keepsake_img.get_width()/3) + 77,
                               213+(60*3),keepsake_img,1)
 
+detailed_appearance_img = pygame.image.load('images/ER_detailedAppearance.png').convert_alpha()
+detailed_appearance_button = button.Button((detailed_appearance_img.get_width()/2) - (detailed_appearance_img.get_width()/3) + 77,
+                              213+(60*5),detailed_appearance_img,1)
+
+age_img = pygame.image.load('images/ER_age.png').convert_alpha()
+age_button = button.Button((age_img.get_width()/2) - (age_img.get_width()/3) + (77*2),
+                              213+(60*6),age_img,1)
+
+voice_img = pygame.image.load('images/ER_voice.png').convert_alpha()
+voice_button = button.Button((voice_img.get_width()/2) - (voice_img.get_width()/3) + (77*2),
+                              213+(60*7),voice_img,1)
+
+skinCol_img = pygame.image.load('images/ER_skincol.png').convert_alpha()
+skinCol_button = button.Button((skinCol_img.get_width()/2) - (skinCol_img.get_width()/3) + (77*2),
+                              213+(60*8),skinCol_img,1)
+
 def main():
     # Game loop
     running = True
     clock = pygame.time.Clock()
     attributes = EldenRandom.EldenRandom.returnAll()
+
+    origin_results = button_font.render(attributes[0], True, (200,200,198))
+    origin_w, origin_h = button_font.size(attributes[0])
+
+    bodytype_results = button_font.render(attributes[1], True, (200,200,198))
+    bodytype_w, bodytype_h = button_font.size(attributes[1])
+
+    keepsake_results = button_font.render(attributes[2], True, (200,200,198))
+    keepsake_w, keepsake_h = button_font.size(attributes[2])
+
+    age_results = button_font.render(attributes[3], True, (200,200,198))
+    age_w, age_h = button_font.size(attributes[3])
+
+    voice_results = button_font.render(attributes[4], True, (200,200,198))
+    voice_w, voice_h = button_font.size(attributes[4])
+
+    #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
+
     titlePos = ((resolution[0]/2) - (title_img.get_width()/2), 0 + (title_img.get_height()/4))
     isRandButtonClicked = False
     while running:
@@ -68,17 +102,40 @@ def main():
             isRandButtonClicked = True
             screen.fill((24,21,15))
             screen.blit(randResults_grad, (((resolution[0]) - (randResults_grad.get_width() - 190)),
-                                           ((resolution[1]) - (randResults_grad.get_height() - 120))))
+                                        ((resolution[1]) - (randResults_grad.get_height() - 120))))
             origin_button.draw(screen)
-            origin_results = button_font.render(attributes[0], True, (200,200,198))
             screen.blit(origin_results, 
-                        ((origin_img.get_width()/2) - (origin_img.get_width()/3) + 77 + ((origin_img.get_width()/4)*3),
-                        213+60))
+                        (((origin_img.get_width())*(1-0.44326617179)) + (199) + (origin_w/2),
+                        213+(60*1)+(origin_h/2.5)))
+            
             bodytype_button.draw(screen)
-            bodytype_results = button_font.render(attributes[1], True, (200,200,198))
+            screen.blit(bodytype_results, 
+                        (((bodytype_img.get_width())*(1-0.44326617179)) + (199) + (bodytype_w/2),
+                        213+(60*2)+(bodytype_h/2.5)))
+            
             keepsake_button.draw(screen)
+            screen.blit(keepsake_results, 
+                        (((keepsake_img.get_width())*(1-0.44326617179)) + (199) + (keepsake_w/2),
+                        213+(60*3)+(keepsake_h/2.5)))
+            
+            detailed_appearance_button.draw(screen)
 
-        elif randomize_button.draw(screen) == False:
+            age_button.draw(screen)
+            screen.blit(age_results, 
+                        (((age_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336)) + (199) + (age_w/2),
+                        213+(60*6)+(age_h/2.5)))
+            
+            voice_button.draw(screen)
+            screen.blit(voice_results, 
+                        (((voice_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336)) + (199) + (voice_w/2),
+                        213+(60*7)+(voice_h/2.5)))
+            skinCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))
+            skinCol_y = 401+40-(age_img.get_height()/2) + (60*5)
+
+            skinCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[5],(skinCol_x,skinCol_y,380,31))
+            
+        elif randomize_button.draw(screen) == False and detailed_appearance_button.draw(screen) == False:
             screen.fill((0,0,0))
             #Background and Title
             bg_image.set_alpha(50)
