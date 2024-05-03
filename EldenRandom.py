@@ -499,7 +499,9 @@ class EldenRandom():
         return returnList
 
 #def main():
-#    print(EldenRandom.returnAll())
+#    facetemp = EldenRandom.face_template()
+#    bonestructure = facetemp[0]
+#    print(bonestructure)
 
 #if __name__ == "__main__":
 #    main() 
