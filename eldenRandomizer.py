@@ -27,6 +27,7 @@ title_img = pygame.image.load('images/title.png')
 #textShadow = pygame.image.load('images/textShadow.png')
 #shadowSize = textShadow.get_width(), textShadow.get_height()
 randResults_grad = pygame.image.load('images/randomizerScreen_gradient.png')
+randResults_grad_title = pygame.image.load('images/randomizerScreen_gradient_title.png')
 #randResults_screen = pygame.transform.scale(randResults_grad, (1920, 1200))
 
 #Button Class
@@ -70,51 +71,115 @@ def main():
     bonestructure_results = button_font.render(str(attributes[6][0]), True, (200,200,198))
     bonestructure_w, bonestructure_h = button_font.size(str(attributes[6][0]))
 
+    formemphasis_results = button_font.render(str(attributes[6][1]), True, (200,200,198))
+    formemphasis_w, formemphasis_h = button_font.size(str(attributes[6][1]))
+
+    apparent_age_results = button_font.render(str(attributes[6][2]), True, (200,200,198))
+    apparent_age_w, apparent_age_h = button_font.size(str(attributes[6][2]))
+
+    facial_aesthetic_results = button_font.render(str(attributes[6][3]), True, (200,200,198))
+    facial_aesthetic_w, facial_aesthetic_h = button_font.size(str(attributes[6][3]))
+
+    nose_size_results = button_font.render(str(attributes[7][0][0]), True, (200,200,198))
+    nose_size_w, nose_size_h = button_font.size(str(attributes[7][0][0]))
+
+    nf_ratio_results = button_font.render(str(attributes[7][0][1]), True, (200,200,198))
+    nf_ratio_w, nf_ratio_h = button_font.size(str(attributes[7][0][1]))
+
+    face_prot_results = button_font.render(str(attributes[7][0][2]), True, (200,200,198))
+    face_prot_w, face_prot_h = button_font.size(str(attributes[7][0][2]))
+
+    vface_ratio_results = button_font.render(str(attributes[7][0][3]), True, (200,200,198))
+    vface_ratio_w, vface_ratio_h = button_font.size(str(attributes[7][0][3]))
+
+    faceSlant_results = button_font.render(str(attributes[7][0][4]), True, (200,200,198))
+    faceSlant_w, faceSlant_h = button_font.size(str(attributes[7][0][4]))
+
+    hFaceRatio_results = button_font.render(str(attributes[7][0][5]), True, (200,200,198))
+    hFaceRatio_w, hFaceRatio_h = button_font.size(str(attributes[7][0][5]))
+
+    foreheadDepth_results = button_font.render(str(attributes[7][1][0]), True, (200,200,198))
+    foreheadDepth_w, foreheadDepth_h = button_font.size(str(attributes[7][1][0]))
+
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
 
     titlePos = ((resolution[0]/2) - (title_img.get_width()/2), 0 + (title_img.get_height()/4))
     isRandButtonClicked = False
     scrollWheel = 0
+    uiOffset = -(77*2)
     while running:
-
-        
-        
         origin_img = pygame.image.load('images/ER_origin.png').convert_alpha()
-        origin_button = button.Button((origin_img.get_width()/2) - (origin_img.get_width()/3) + 77,
+        origin_button = button.Button((origin_img.get_width()/2) - (origin_img.get_width()/3) + 77 + uiOffset,
                                     213+60+scrollWheel,origin_img,1)
-        
         bodytype_img = pygame.image.load('images/ER_bodytype.png').convert_alpha()
-        bodytype_button = button.Button((bodytype_img.get_width()/2) - (bodytype_img.get_width()/3) + 77,
+        bodytype_button = button.Button((bodytype_img.get_width()/2) - (bodytype_img.get_width()/3) + 77 + uiOffset,
                                     213+(60*2)+scrollWheel,bodytype_img,1)
-        
         keepsake_img = pygame.image.load('images/ER_keepsake.png').convert_alpha()
-        keepsake_button = button.Button((keepsake_img.get_width()/2) - (keepsake_img.get_width()/3) + 77,
+        keepsake_button = button.Button((keepsake_img.get_width()/2) - (keepsake_img.get_width()/3) + 77 + uiOffset,
                                     213+(60*3)+scrollWheel,keepsake_img,1)
-        
         detailed_appearance_img = pygame.image.load('images/ER_detailedAppearance.png').convert_alpha()
-        detailed_appearance_button = button.Button((detailed_appearance_img.get_width()/2) - (detailed_appearance_img.get_width()/3) + 77,
+        detailed_appearance_button = button.Button((detailed_appearance_img.get_width()/2) - (detailed_appearance_img.get_width()/3) + 77 + uiOffset,
                                     213+(60*5)+scrollWheel,detailed_appearance_img,1)
-        
         age_img = pygame.image.load('images/ER_age.png').convert_alpha()
-        age_button = button.Button((age_img.get_width()/2) - (age_img.get_width()/3) + (77*2),
+        age_button = button.Button((age_img.get_width()/2) - (age_img.get_width()/3) + (77*2) + uiOffset,
                                     213+(60*6)+scrollWheel,age_img,1)
-        
         voice_img = pygame.image.load('images/ER_voice.png').convert_alpha()
-        voice_button = button.Button((voice_img.get_width()/2) - (voice_img.get_width()/3) + (77*2),
+        voice_button = button.Button((voice_img.get_width()/2) - (voice_img.get_width()/3) + (77*2) + uiOffset,
                                     213+(60*7)+scrollWheel,voice_img,1)
-        
         skinCol_img = pygame.image.load('images/ER_skincol.png').convert_alpha()
-        skinCol_button = button.Button((skinCol_img.get_width()/2) - (skinCol_img.get_width()/3) + (77*2),
+        skinCol_button = button.Button((skinCol_img.get_width()/2) - (skinCol_img.get_width()/3) + (77*2) + uiOffset,
                                     213+(60*8)+scrollWheel,skinCol_img,1)
         face_hair_img = pygame.image.load('images/ER_face-hair.png').convert_alpha()
-        face_hair_button = button.Button((face_hair_img.get_width()/2) - (face_hair_img.get_width()/3) + (77),
+        face_hair_button = button.Button((face_hair_img.get_width()/2) - (face_hair_img.get_width()/3) + (77) + uiOffset,
                                     213+(60*9)+scrollWheel,face_hair_img,1)
         facetemplate_img = pygame.image.load('images/ER_facetemplate.png').convert_alpha()
-        facetemplate_button = button.Button((facetemplate_img.get_width()/2) - (facetemplate_img.get_width()/3) + (77*2),
+        facetemplate_button = button.Button((facetemplate_img.get_width()/2) - (facetemplate_img.get_width()/3) + (77*2) + uiOffset,
                                     213+(60*10)+scrollWheel,facetemplate_img,1)
         bonestructure_img = pygame.image.load('images/ER_bonestructure.png').convert_alpha()
-        bonestructure_button = button.Button((bonestructure_img.get_width()/2) - (bonestructure_img.get_width()/3) + (77*3),
+        bonestructure_button = button.Button((bonestructure_img.get_width()/2) - (bonestructure_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*11)+scrollWheel,bonestructure_img,1)
+        formemphasis_img = pygame.image.load('images/ER_formemphasis.png').convert_alpha()
+        formemphasis_button = button.Button((formemphasis_img.get_width()/2) - (formemphasis_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*12)+scrollWheel,formemphasis_img,1)
+        apparent_age_img = pygame.image.load('images/ER_apparent_age.png').convert_alpha()
+        apparent_age_button = button.Button((apparent_age_img.get_width()/2) - (apparent_age_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*13)+scrollWheel,apparent_age_img,1)
+        facial_aesthetic_img = pygame.image.load('images/ER_facial-aesthetic.png').convert_alpha()
+        facial_aesthetic_button = button.Button((facial_aesthetic_img.get_width()/2) - (facial_aesthetic_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*14)+scrollWheel,facial_aesthetic_img,1)
+        
+        facialstructure_img = pygame.image.load('images/ER_facialstructure.png').convert_alpha()
+        facialstructure_button = button.Button((facialstructure_img.get_width()/2) - (facialstructure_img.get_width()/3) + (77*2) + uiOffset,
+                                    213+(60*15)+scrollWheel,facialstructure_img,1)
+        
+        facialbalance_img = pygame.image.load('images/ER_facialbalance.png').convert_alpha()
+        facialbalance_button = button.Button((facialbalance_img.get_width()/2) - (facialbalance_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*16)+scrollWheel,facialbalance_img,1)
+        nose_size_img = pygame.image.load('images/ER_nose_size.png').convert_alpha()
+        nose_size_button = button.Button((nose_size_img.get_width()/2) - (nose_size_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*17)+scrollWheel,nose_size_img,1)
+        nf_ratio_img = pygame.image.load('images/ER_nose_forehead_ratio.png').convert_alpha()
+        nf_ratio_button = button.Button((nf_ratio_img.get_width()/2) - (nf_ratio_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*18)+scrollWheel,nf_ratio_img,1)
+        face_prot_img = pygame.image.load('images/ER_face_protrusion.png').convert_alpha()
+        face_prot_button = button.Button((face_prot_img.get_width()/2) - (face_prot_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*19)+scrollWheel,face_prot_img,1)
+        vface_ratio_img = pygame.image.load('images/ER_vert_face_ratio.png').convert_alpha()
+        vface_ratio_button = button.Button((vface_ratio_img.get_width()/2) - (vface_ratio_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*20)+scrollWheel,vface_ratio_img,1)
+        faceSlant_img = pygame.image.load('images/ER_facial_feature_slant.png').convert_alpha()
+        faceSlant_button = button.Button((faceSlant_img.get_width()/2) - (faceSlant_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*21)+scrollWheel,faceSlant_img,1)
+        hFaceRatio_img = pygame.image.load('images/ER_horiz_face_ratio.png').convert_alpha()
+        hFaceRatio_button = button.Button((hFaceRatio_img.get_width()/2) - (hFaceRatio_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*22)+scrollWheel,hFaceRatio_img,1)
+        foreheadGlabella_img = pygame.image.load('images/ER_forehead-glabella.png').convert_alpha()
+        foreheadGlabella_button = button.Button((foreheadGlabella_img.get_width()/2) - (foreheadGlabella_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*23)+scrollWheel,foreheadGlabella_img,1)
+        foreheadDepth_img = pygame.image.load('images/ER_forehead_depth.png').convert_alpha()
+        foreheadDepth_button = button.Button((foreheadDepth_img.get_width()/2) - (foreheadDepth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*24)+scrollWheel,foreheadDepth_img,1)
+        
         #Randomizer Results Screen
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
             isRandButtonClicked = True
@@ -123,45 +188,104 @@ def main():
                                         ((resolution[1]) - (randResults_grad.get_height()))))
             origin_button.draw(screen)
             screen.blit(origin_results, 
-                        (((origin_img.get_width())*(1-0.44326617179)) + (199) + (origin_w/2),
+                        (((origin_img.get_width())*(1-0.44326617179)) + (199) + (origin_w/2) + uiOffset,
                         213+(60*1)+(origin_h/2.5)+scrollWheel))
             
             bodytype_button.draw(screen)
             screen.blit(bodytype_results, 
-                        (((bodytype_img.get_width())*(1-0.44326617179)) + (199) + (bodytype_w/2),
+                        (((bodytype_img.get_width())*(1-0.44326617179)) + (199) + (bodytype_w/2) + uiOffset,
                         213+(60*2)+(bodytype_h/2.5)+scrollWheel))
             
             keepsake_button.draw(screen)
             screen.blit(keepsake_results, 
-                        (((keepsake_img.get_width())*(1-0.44326617179)) + (199) + (keepsake_w/2),
+                        (((keepsake_img.get_width())*(1-0.44326617179)) + (199) + (keepsake_w/2) + uiOffset,
                         213+(60*3)+(keepsake_h/2.5)+scrollWheel))
             
             detailed_appearance_button.draw(screen)
 
             age_button.draw(screen)
             screen.blit(age_results, 
-                        (((age_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336)) + (199) + (age_w/2),
+                        (((age_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336)) + (199) + (age_w/2) + uiOffset,
                         213+(60*6)+(age_h/2.5)+scrollWheel))
             
             voice_button.draw(screen)
             screen.blit(voice_results, 
-                        (((voice_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336)) + (199) + (voice_w/2),
+                        (((voice_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336)) + (199) + (voice_w/2) + uiOffset,
                         213+(60*7)+(voice_h/2.5)+scrollWheel))
             
             skinCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))
             skinCol_y = 401+40-(age_img.get_height()/2) + (60*5)
             skinCol_button.draw(screen)
-            pygame.draw.rect(screen,attributes[5],(skinCol_x,skinCol_y+scrollWheel,380,31))
+            pygame.draw.rect(screen,attributes[5],(skinCol_x + uiOffset,skinCol_y+scrollWheel,380,31))
 
+            # Adjust Face/Hair Section
             face_hair_button.draw(screen)
 
+            ## Face Template Section
             facetemplate_button.draw(screen)
 
             bonestructure_button.draw(screen)
             screen.blit(bonestructure_results, 
-                        (((bonestructure_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) + (bonestructure_w/2),
+                        (((bonestructure_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (bonestructure_w*3) + uiOffset,
                         213+(60*11)+(bonestructure_h/2.5)+scrollWheel))
             
+            formemphasis_button.draw(screen)
+            screen.blit(formemphasis_results, 
+                        (((formemphasis_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (formemphasis_w*3) + uiOffset,
+                        213+(60*12)+(formemphasis_h/2.5)+scrollWheel))
+            
+            apparent_age_button.draw(screen)
+            screen.blit(apparent_age_results, 
+                        (((apparent_age_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (apparent_age_w*3) + uiOffset,
+                        213+(60*13)+(apparent_age_h/2.5)+scrollWheel))
+            
+            facial_aesthetic_button.draw(screen)
+            screen.blit(facial_aesthetic_results, 
+                        (((facial_aesthetic_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (facial_aesthetic_w*3) + uiOffset,
+                        213+(60*14)+(facial_aesthetic_h/2.5)+scrollWheel))
+            
+            ## Facial Structure Section
+            facialstructure_button.draw(screen)
+
+            facialbalance_button.draw(screen)
+
+            nose_size_button.draw(screen)
+            screen.blit(nose_size_results, 
+                        (((nose_size_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (nose_size_w*3) + uiOffset,
+                        213+(60*17)+(nose_size_h/2.5)+scrollWheel))
+            nf_ratio_button.draw(screen)
+            screen.blit(nf_ratio_results, 
+                        (((nf_ratio_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (nf_ratio_w*3) + uiOffset,
+                        213+(60*18)+(nf_ratio_h/2.5)+scrollWheel))
+            face_prot_button.draw(screen)
+            screen.blit(face_prot_results, 
+                        (((face_prot_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (face_prot_w*3) + uiOffset,
+                        213+(60*19)+(face_prot_h/2.5)+scrollWheel))
+            vface_ratio_button.draw(screen)
+            screen.blit(vface_ratio_results, 
+                        (((vface_ratio_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (vface_ratio_w*3) + uiOffset,
+                        213+(60*20)+(vface_ratio_h/2.5)+scrollWheel))
+            faceSlant_button.draw(screen)
+            screen.blit(faceSlant_results,
+                        (((faceSlant_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (faceSlant_w*3) + uiOffset,
+                        213+(60*21)+(faceSlant_h/2.5)+scrollWheel))
+            hFaceRatio_button.draw(screen)
+            screen.blit(hFaceRatio_results,
+                        (((hFaceRatio_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (hFaceRatio_w*3) + uiOffset,
+                        213+(60*22)+(hFaceRatio_h/2.5)+scrollWheel))
+            
+            ## Forehead/Glabella Section
+            foreheadGlabella_button.draw(screen)
+
+            foreheadDepth_button.draw(screen)
+            screen.blit(foreheadDepth_results,
+                        (((foreheadDepth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (foreheadDepth_w*3) + uiOffset,
+                        213+(60*22)+(foreheadDepth_h/2.5)+scrollWheel))
+            
+            # Randomizer Screen Title Overlay
+            screen.blit(randResults_grad_title, (((resolution[0]) - (randResults_grad.get_width())),
+                                        ((resolution[1]) - (randResults_grad_title.get_height()))))
+        #Title Screen
         elif randomize_button.draw(screen) == False and detailed_appearance_button.draw(screen) == False:
             screen.fill((0,0,0))
             #Background and Title
@@ -191,7 +315,7 @@ def main():
             if event.type == pygame.KEYDOWN and pygame.key.get_pressed()[pygame.K_q]:
                 isRandButtonClicked = False
             if event.type == pygame.MOUSEWHEEL:
-                scrollWheel += (event.y)*5
+                scrollWheel += (event.y)*10
 
         pygame.display.update()
 

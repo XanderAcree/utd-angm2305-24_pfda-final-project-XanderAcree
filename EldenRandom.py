@@ -147,7 +147,7 @@ class EldenRandom():
 
     ## Face Structure
 
-    #### EldenRandom.all index: 7 [x][o][o]
+    #### EldenRandom.all index: 7 [7][0][0]
     def facial_structure():
         # Facial Balance
         nose_size = EldenRandom.eldenAttribute(255)
