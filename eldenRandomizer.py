@@ -137,12 +137,63 @@ def main():
     eyeSpacing_results = button_font.render(str(attributes[7][3][3]), True, (200,200,198))
     eyeSpacing_w, eyeSpacing_h = button_font.size(str(attributes[7][3][3]))
 
+    noseRidgeDepth_results = button_font.render(str(attributes[7][4][0]), True, (200,200,198))
+    noseRidgeDepth_w, noseRidgeDepth_h = button_font.size(str(attributes[7][4][0]))
+
+    noseRidgeLen_results = button_font.render(str(attributes[7][4][1]), True, (200,200,198))
+    noseRidgeLen_w, noseRidgeLen_h = button_font.size(str(attributes[7][4][1]))
+
+    nosePos_results = button_font.render(str(attributes[7][4][2]), True, (200,200,198))
+    nosePos_w, nosePos_h = button_font.size(str(attributes[7][4][2]))
+
+    noseTipH_results = button_font.render(str(attributes[7][4][3]), True, (200,200,198))
+    noseTipH_w, noseTipH_h = button_font.size(str(attributes[7][4][3]))
+
+    noseProt_results = button_font.render(str(attributes[7][4][4]), True, (200,200,198))
+    noseProt_w, noseProt_h = button_font.size(str(attributes[7][4][4]))
+
+    noseH_results = button_font.render(str(attributes[7][4][5]), True, (200,200,198))
+    noseH_w, noseH_h = button_font.size(str(attributes[7][4][5]))
+
+    noseSlant_results = button_font.render(str(attributes[7][4][6]), True, (200,200,198))
+    noseSlant_w, noseSlant_h = button_font.size(str(attributes[7][4][6]))
+
+    nostrilSlant_results = button_font.render(str(attributes[7][5][0]), True, (200,200,198))
+    nostrilSlant_w, nostrilSlant_h = button_font.size(str(attributes[7][5][0]))
+
+    nostrilSize_results = button_font.render(str(attributes[7][5][1]), True, (200,200,198))
+    nostrilSize_w, nostrilSize_h = button_font.size(str(attributes[7][5][1]))
+
+    nostrilWidth_results = button_font.render(str(attributes[7][5][2]), True, (200,200,198))
+    nostrilWidth_w, nostrilWidth_h = button_font.size(str(attributes[7][5][2]))
+
+    cheekHeight_results = button_font.render(str(attributes[7][6][0]), True, (200,200,198))
+    cheekHeight_w, cheekHeight_h = button_font.size(str(attributes[7][6][0]))
+
+    cheekDepth_results = button_font.render(str(attributes[7][6][1]), True, (200,200,198))
+    cheekDepth_w, cheekDepth_h = button_font.size(str(attributes[7][6][1]))
+
+    cheekWidth_results = button_font.render(str(attributes[7][6][2]), True, (200,200,198))
+    cheekWidth_w, cheekWidth_h = button_font.size(str(attributes[7][6][2]))
+
+    cheekProt_results = button_font.render(str(attributes[7][6][3]), True, (200,200,198))
+    cheekProt_w, cheekProt_h = button_font.size(str(attributes[7][6][3]))
+
+    _cheeks_results = button_font.render(str(attributes[7][6][4]), True, (200,200,198))
+    _cheeks_w, _cheeks_h = button_font.size(str(attributes[7][6][4]))
+
+
+
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
 
     titlePos = ((resolution[0]/2) - (title_img.get_width()/2), 0 + (title_img.get_height()/4))
     isRandButtonClicked = False
     scrollWheel = 0
     uiOffset = -(77*2)
+
+    # DEBUG FOR COLORS
+    print(attributes[5]) ## SKIN COLOR
+
     while running:
         origin_img = pygame.image.load('images/ER_origin.png').convert_alpha()
         origin_button = button.Button((origin_img.get_width()/2) - (origin_img.get_width()/3) + 77 + uiOffset,
@@ -263,14 +314,59 @@ def main():
         noseRidge_img = pygame.image.load('images/ER_nose_ridge.png').convert_alpha()
         noseRidge_button = button.Button((noseRidge_img.get_width()/2) - (noseRidge_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*39)+scrollWheel,noseRidge_img,1)
+        noseRidgeDepth_img = pygame.image.load('images/ER_nose_ridge_depth.png').convert_alpha()
+        noseRidgeDepth_button = button.Button((noseRidgeDepth_img.get_width()/2) - (noseRidgeDepth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*40)+scrollWheel,noseRidgeDepth_img,1)
+        noseRidgeLen_img = pygame.image.load('images/ER_nose_ridge_len.png').convert_alpha()
+        noseRidgeLen_button = button.Button((noseRidgeLen_img.get_width()/2) - (noseRidgeLen_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*41)+scrollWheel,noseRidgeLen_img,1)
+        nosePos_img = pygame.image.load('images/ER_nose_pos.png').convert_alpha()
+        nosePos_button = button.Button((nosePos_img.get_width()/2) - (nosePos_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*42)+scrollWheel,nosePos_img,1)
+        noseTipH_img = pygame.image.load('images/ER_nose_tip_h.png').convert_alpha()
+        noseTipH_button = button.Button((noseTipH_img.get_width()/2) - (noseTipH_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*43)+scrollWheel,noseTipH_img,1)
+        noseProt_img = pygame.image.load('images/ER_nose_protrusion.png').convert_alpha()
+        noseProt_button = button.Button((noseProt_img.get_width()/2) - (noseProt_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*44)+scrollWheel,noseProt_img,1)
+        noseH_img = pygame.image.load('images/ER_nose_h.png').convert_alpha()
+        noseH_button = button.Button((noseH_img.get_width()/2) - (noseH_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*45)+scrollWheel,noseH_img,1)
+        noseSlant_img = pygame.image.load('images/ER_nose_slant.png').convert_alpha()
+        noseSlant_button = button.Button((noseSlant_img.get_width()/2) - (noseSlant_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*46)+scrollWheel,noseSlant_img,1)
         
         nostrils_img = pygame.image.load('images/ER_nostrils.png').convert_alpha()
         nostrils_button = button.Button((nostrils_img.get_width()/2) - (nostrils_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*47)+scrollWheel,nostrils_img,1)
+        nostrilSlant_img = pygame.image.load('images/ER_nostril_slant.png').convert_alpha()
+        nostrilSlant_button = button.Button((nostrilSlant_img.get_width()/2) - (nostrilSlant_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*48)+scrollWheel,nostrilSlant_img,1)
+        nostrilSize_img = pygame.image.load('images/ER_nostril_size.png').convert_alpha()
+        nostrilSize_button = button.Button((nostrilSize_img.get_width()/2) - (nostrilSize_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*49)+scrollWheel,nostrilSize_img,1)
+        nostrilWidth_img = pygame.image.load('images/ER_nostril_width.png').convert_alpha()
+        nostrilWidth_button = button.Button((nostrilWidth_img.get_width()/2) - (nostrilWidth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*50)+scrollWheel,nostrilWidth_img,1)
         
         cheeks_img = pygame.image.load('images/ER_cheeks.png').convert_alpha()
         cheeks_button = button.Button((cheeks_img.get_width()/2) - (cheeks_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*51)+scrollWheel,cheeks_img,1)
+        cheekHeight_img = pygame.image.load('images/ER_cheek_height.png').convert_alpha()
+        cheekHeight_button = button.Button((cheekHeight_img.get_width()/2) - (cheekHeight_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*52)+scrollWheel,cheekHeight_img,1)
+        cheekDepth_img = pygame.image.load('images/ER_cheek_depth.png').convert_alpha()
+        cheekDepth_button = button.Button((cheekDepth_img.get_width()/2) - (cheekDepth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*53)+scrollWheel,cheekDepth_img,1)
+        cheekWidth_img = pygame.image.load('images/ER_cheek_width.png').convert_alpha()
+        cheekWidth_button = button.Button((cheekWidth_img.get_width()/2) - (cheekWidth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*54)+scrollWheel,cheekWidth_img,1)
+        cheekProt_img = pygame.image.load('images/ER_cheek_protrusion.png').convert_alpha()
+        cheekProt_button = button.Button((cheekProt_img.get_width()/2) - (cheekProt_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*55)+scrollWheel,cheekProt_img,1)
+        _cheeks_img = pygame.image.load('images/ER__cheeks.png').convert_alpha()
+        _cheeks_button = button.Button((_cheeks_img.get_width()/2) - (_cheeks_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*56)+scrollWheel,_cheeks_img,1)
         
         lips_img = pygame.image.load('images/ER_lips.png').convert_alpha()
         lips_button = button.Button((lips_img.get_width()/2) - (lips_img.get_width()/3) + (77*3) + uiOffset,
@@ -447,12 +543,72 @@ def main():
             ## Nose Ridge Section
             noseRidge_button.draw(screen)
 
+            noseRidgeDepth_button.draw(screen)
+            screen.blit(noseRidgeDepth_results,
+                        (((noseRidgeDepth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseRidgeDepth_w*3) + uiOffset,
+                        213+(60*40)+(noseRidgeDepth_h/2.5)+scrollWheel))
+            noseRidgeLen_button.draw(screen)
+            screen.blit(noseRidgeLen_results,
+                        (((noseRidgeLen_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseRidgeLen_w*3) + uiOffset,
+                        213+(60*41)+(noseRidgeLen_h/2.5)+scrollWheel))
+            nosePos_button.draw(screen)
+            screen.blit(nosePos_results,
+                        (((nosePos_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (nosePos_w*3) + uiOffset,
+                        213+(60*42)+(nosePos_h/2.5)+scrollWheel))
+            noseTipH_button.draw(screen)
+            screen.blit(noseTipH_results,
+                        (((noseTipH_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseTipH_w*3) + uiOffset,
+                        213+(60*43)+(noseTipH_h/2.5)+scrollWheel))
+            noseProt_button.draw(screen)
+            screen.blit(noseProt_results,
+                        (((noseProt_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseProt_w*3) + uiOffset,
+                        213+(60*44)+(noseProt_h/2.5)+scrollWheel))
+            noseH_button.draw(screen)
+            screen.blit(noseH_results,
+                        (((noseH_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseH_w*3) + uiOffset,
+                        213+(60*45)+(noseH_h/2.5)+scrollWheel))
+            noseSlant_button.draw(screen)
+            screen.blit(noseSlant_results,
+                        (((noseSlant_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseSlant_w*3) + uiOffset,
+                        213+(60*46)+(noseSlant_h/2.5)+scrollWheel))
             ## Nostrils Section
             nostrils_button.draw(screen)
 
+            nostrilSlant_button.draw(screen)
+            screen.blit(nostrilSlant_results,
+                        (((nostrilSlant_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (nostrilSlant_w*3) + uiOffset,
+                        213+(60*48)+(nostrilSlant_h/2.5)+scrollWheel))
+            nostrilSize_button.draw(screen)
+            screen.blit(nostrilSize_results,
+                        (((nostrilSize_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (nostrilSize_w*3) + uiOffset,
+                        213+(60*49)+(nostrilSize_h/2.5)+scrollWheel))
+            nostrilWidth_button.draw(screen)
+            screen.blit(nostrilWidth_results,
+                        (((nostrilWidth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (nostrilWidth_w*3) + uiOffset,
+                        213+(60*50)+(nostrilWidth_h/2.5)+scrollWheel))
             ## Cheeks Section
             cheeks_button.draw(screen)
 
+            cheekHeight_button.draw(screen)
+            screen.blit(cheekHeight_results,
+                        (((cheekHeight_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (cheekHeight_w*3) + uiOffset,
+                        213+(60*52)+(cheekHeight_h/2.5)+scrollWheel))
+            cheekDepth_button.draw(screen)
+            screen.blit(cheekDepth_results,
+                        (((cheekDepth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (cheekDepth_w*3) + uiOffset,
+                        213+(60*53)+(cheekDepth_h/2.5)+scrollWheel))
+            cheekWidth_button.draw(screen)
+            screen.blit(cheekWidth_results,
+                        (((cheekWidth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (cheekWidth_w*3) + uiOffset,
+                        213+(60*54)+(cheekWidth_h/2.5)+scrollWheel))
+            cheekProt_button.draw(screen)
+            screen.blit(cheekProt_results,
+                        (((cheekProt_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (cheekProt_w*3) + uiOffset,
+                        213+(60*55)+(cheekProt_h/2.5)+scrollWheel))
+            _cheeks_button.draw(screen)
+            screen.blit(_cheeks_results,
+                        (((_cheeks_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (_cheeks_w*3) + uiOffset,
+                        213+(60*56)+(_cheeks_h/2.5)+scrollWheel))
             ## Lips Section
             lips_button.draw(screen)
 

@@ -205,7 +205,7 @@ class EldenRandom():
         cheek_width = EldenRandom.eldenAttribute(255)
         cheek_protrusion = EldenRandom.eldenAttribute(255)
         _cheeks = EldenRandom.eldenAttribute(255)
-        cheeks = [cheek_height, cheek_depth, cheek_width, cheek_protrusion, _cheeks] #[7][6][0-5]
+        cheeks = [cheek_height, cheek_depth, cheek_width, cheek_protrusion, _cheeks] #[7][6][0-4]
 
         #Lips
         lip_shape = EldenRandom.eldenAttribute(255)
