@@ -172,6 +172,19 @@ def main():
     lipThick_results = button_font.render(str(attributes[7][7][5]), True, eldenFontCol)
     lipThick_w, lipThick_h = button_font.size(str(attributes[7][7][5]))
 
+    mouthProt_results = button_font.render(str(attributes[7][8][0]), True, eldenFontCol)
+    mouthProt_w, mouthProt_h = button_font.size(str(attributes[7][8][0]))
+    mouthSlant_results = button_font.render(str(attributes[7][8][1]), True, eldenFontCol)
+    mouthSlant_w, mouthSlant_h = button_font.size(str(attributes[7][8][1]))
+    occlusion_results = button_font.render(str(attributes[7][8][2]), True, eldenFontCol)
+    occlusion_w, occlusion_h = button_font.size(str(attributes[7][8][2]))
+    mouthPos_results = button_font.render(str(attributes[7][8][3]), True, eldenFontCol)
+    mouthPos_w, mouthPos_h = button_font.size(str(attributes[7][8][3]))
+    mouthWidth_results = button_font.render(str(attributes[7][8][4]), True, eldenFontCol)
+    mouthWidth_w, mouthWidth_h = button_font.size(str(attributes[7][8][4]))
+    mouthChinDist_results = button_font.render(str(attributes[7][8][5]), True, eldenFontCol)
+    mouthChinDist_w, mouthChinDist_h = button_font.size(str(attributes[7][8][5]))
+
 
 
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
@@ -383,6 +396,24 @@ def main():
         mouth_img = pygame.image.load('images/ER_mouth.png').convert_alpha()
         mouth_button = button.Button((mouth_img.get_width()/2) - (mouth_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*64)+scrollWheel,mouth_img,1)
+        mouthProt_img = pygame.image.load('images/ER_mouth_protrusion.png').convert_alpha()
+        mouthProt_button = button.Button((mouthProt_img.get_width()/2) - (mouthProt_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*65)+scrollWheel,mouthProt_img,1)
+        mouthSlant_img = pygame.image.load('images/ER_mouth_slant.png').convert_alpha()
+        mouthSlant_button = button.Button((mouthSlant_img.get_width()/2) - (mouthSlant_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*66)+scrollWheel,mouthSlant_img,1)
+        occlusion_img = pygame.image.load('images/ER_occlusion.png').convert_alpha()
+        occlusion_button = button.Button((occlusion_img.get_width()/2) - (occlusion_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*67)+scrollWheel,occlusion_img,1)
+        mouthPos_img = pygame.image.load('images/ER_mouth_position.png').convert_alpha()
+        mouthPos_button = button.Button((mouthPos_img.get_width()/2) - (mouthPos_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*68)+scrollWheel,mouthPos_img,1)
+        mouthWidth_img = pygame.image.load('images/ER_mouth_width.png').convert_alpha()
+        mouthWidth_button = button.Button((mouthWidth_img.get_width()/2) - (mouthWidth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*69)+scrollWheel,mouthWidth_img,1)
+        mouthChinDist_img = pygame.image.load('images/ER_mouth_chin_dist.png').convert_alpha()
+        mouthChinDist_button = button.Button((mouthChinDist_img.get_width()/2) - (mouthChinDist_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*70)+scrollWheel,mouthChinDist_img,1)
         
         chin_img = pygame.image.load('images/ER_chin.png').convert_alpha()
         chin_button = button.Button((chin_img.get_width()/2) - (chin_img.get_width()/3) + (77*3) + uiOffset,
@@ -644,9 +675,34 @@ def main():
             screen.blit(lipThick_results,
                         (((lipThick_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lipThick_w*3) + uiOffset,
                         213+(60*63)+(lipThick_h/2.5)+scrollWheel))
+            
             ## Mouth Section
             mouth_button.draw(screen)
 
+            mouthProt_button.draw(screen)
+            screen.blit(mouthProt_results,
+                        (((mouthProt_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (mouthProt_w*3) + uiOffset,
+                        213+(60*65)+(mouthProt_h/2.5)+scrollWheel))
+            mouthSlant_button.draw(screen)
+            screen.blit(mouthSlant_results,
+                        (((mouthSlant_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (mouthSlant_w*3) + uiOffset,
+                        213+(60*66)+(mouthSlant_h/2.5)+scrollWheel))
+            occlusion_button.draw(screen)
+            screen.blit(occlusion_results,
+                        (((occlusion_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (occlusion_w*3) + uiOffset,
+                        213+(60*67)+(occlusion_h/2.5)+scrollWheel))
+            mouthPos_button.draw(screen)
+            screen.blit(mouthPos_results,
+                        (((mouthPos_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (mouthPos_w*3) + uiOffset,
+                        213+(60*68)+(mouthPos_h/2.5)+scrollWheel))
+            mouthWidth_button.draw(screen)
+            screen.blit(mouthWidth_results,
+                        (((mouthWidth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (mouthWidth_w*3) + uiOffset,
+                        213+(60*69)+(mouthWidth_h/2.5)+scrollWheel))
+            mouthChinDist_button.draw(screen)
+            screen.blit(mouthChinDist_results,
+                        (((mouthChinDist_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (mouthChinDist_w*3) + uiOffset,
+                        213+(60*70)+(mouthChinDist_h/2.5)+scrollWheel))
             ## Chin Section
             chin_button.draw(screen)
 
