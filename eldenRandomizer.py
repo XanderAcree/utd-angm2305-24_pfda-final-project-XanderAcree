@@ -47,140 +47,130 @@ randResults_grad_title = pygame.image.load('images/randomizerScreen_gradient_tit
 randomize_img = pygame.image.load('images/randomizeButton/randomizeButton_00012.png').convert_alpha()
 randomize_button = button.Button(((resolution[0]/2) - (randomize_img.get_width()/2)), 
                                  ((resolution[1]/2) - (randomize_img.get_height()/2)), randomize_img, 1)
+
+eldenFontCol = (200,200,198)
+
 def main():
     # Game loop
     running = True
     clock = pygame.time.Clock()
     attributes = EldenRandom.EldenRandom.returnAll()
 
-    origin_results = button_font.render(attributes[0], True, (200,200,198))
+    origin_results = button_font.render(attributes[0], True, eldenFontCol)
     origin_w, origin_h = button_font.size(attributes[0])
 
-    bodytype_results = button_font.render(attributes[1], True, (200,200,198))
+    bodytype_results = button_font.render(attributes[1], True, eldenFontCol)
     bodytype_w, bodytype_h = button_font.size(attributes[1])
 
-    keepsake_results = button_font.render(attributes[2], True, (200,200,198))
+    keepsake_results = button_font.render(attributes[2], True, eldenFontCol)
     keepsake_w, keepsake_h = button_font.size(attributes[2])
 
-    age_results = button_font.render(attributes[3], True, (200,200,198))
+    age_results = button_font.render(attributes[3], True, eldenFontCol)
     age_w, age_h = button_font.size(attributes[3])
 
-    voice_results = button_font.render(attributes[4], True, (200,200,198))
+    voice_results = button_font.render(attributes[4], True, eldenFontCol)
     voice_w, voice_h = button_font.size(attributes[4])
 
-    bonestructure_results = button_font.render(str(attributes[6][0]), True, (200,200,198))
+    bonestructure_results = button_font.render(str(attributes[6][0]), True, eldenFontCol)
     bonestructure_w, bonestructure_h = button_font.size(str(attributes[6][0]))
 
-    formemphasis_results = button_font.render(str(attributes[6][1]), True, (200,200,198))
+    formemphasis_results = button_font.render(str(attributes[6][1]), True, eldenFontCol)
     formemphasis_w, formemphasis_h = button_font.size(str(attributes[6][1]))
 
-    apparent_age_results = button_font.render(str(attributes[6][2]), True, (200,200,198))
+    apparent_age_results = button_font.render(str(attributes[6][2]), True, eldenFontCol)
     apparent_age_w, apparent_age_h = button_font.size(str(attributes[6][2]))
 
-    facial_aesthetic_results = button_font.render(str(attributes[6][3]), True, (200,200,198))
+    facial_aesthetic_results = button_font.render(str(attributes[6][3]), True, eldenFontCol)
     facial_aesthetic_w, facial_aesthetic_h = button_font.size(str(attributes[6][3]))
 
-    nose_size_results = button_font.render(str(attributes[7][0][0]), True, (200,200,198))
+    nose_size_results = button_font.render(str(attributes[7][0][0]), True, eldenFontCol)
     nose_size_w, nose_size_h = button_font.size(str(attributes[7][0][0]))
-
-    nf_ratio_results = button_font.render(str(attributes[7][0][1]), True, (200,200,198))
+    nf_ratio_results = button_font.render(str(attributes[7][0][1]), True, eldenFontCol)
     nf_ratio_w, nf_ratio_h = button_font.size(str(attributes[7][0][1]))
-
-    face_prot_results = button_font.render(str(attributes[7][0][2]), True, (200,200,198))
+    face_prot_results = button_font.render(str(attributes[7][0][2]), True, eldenFontCol)
     face_prot_w, face_prot_h = button_font.size(str(attributes[7][0][2]))
-
-    vface_ratio_results = button_font.render(str(attributes[7][0][3]), True, (200,200,198))
+    vface_ratio_results = button_font.render(str(attributes[7][0][3]), True, eldenFontCol)
     vface_ratio_w, vface_ratio_h = button_font.size(str(attributes[7][0][3]))
-
-    faceSlant_results = button_font.render(str(attributes[7][0][4]), True, (200,200,198))
+    faceSlant_results = button_font.render(str(attributes[7][0][4]), True, eldenFontCol)
     faceSlant_w, faceSlant_h = button_font.size(str(attributes[7][0][4]))
-
-    hFaceRatio_results = button_font.render(str(attributes[7][0][5]), True, (200,200,198))
+    hFaceRatio_results = button_font.render(str(attributes[7][0][5]), True, eldenFontCol)
     hFaceRatio_w, hFaceRatio_h = button_font.size(str(attributes[7][0][5]))
 
-    foreheadDepth_results = button_font.render(str(attributes[7][1][0]), True, (200,200,198))
+    foreheadDepth_results = button_font.render(str(attributes[7][1][0]), True, eldenFontCol)
     foreheadDepth_w, foreheadDepth_h = button_font.size(str(attributes[7][1][0]))
-
-    foreheadProt_results = button_font.render(str(attributes[7][1][1]), True, (200,200,198))
+    foreheadProt_results = button_font.render(str(attributes[7][1][1]), True, eldenFontCol)
     foreheadProt_w, foreheadProt_h = button_font.size(str(attributes[7][1][1]))
 
-    noseBridgeH_results = button_font.render(str(attributes[7][1][2]), True, (200,200,198))
+    noseBridgeH_results = button_font.render(str(attributes[7][1][2]), True, eldenFontCol)
     noseBridgeH_w, noseBridgeH_h = button_font.size(str(attributes[7][1][2]))
-
-    n_bridgeProt1_results = button_font.render(str(attributes[7][1][3]), True, (200,200,198))
+    n_bridgeProt1_results = button_font.render(str(attributes[7][1][3]), True, eldenFontCol)
     n_bridgeProt1_w, n_bridgeProt1_h = button_font.size(str(attributes[7][1][3]))
-
-    n_bridgeProt2_results = button_font.render(str(attributes[7][1][4]), True, (200,200,198))
+    n_bridgeProt2_results = button_font.render(str(attributes[7][1][4]), True, eldenFontCol)
     n_bridgeProt2_w, n_bridgeProt2_h = button_font.size(str(attributes[7][1][4]))
-
-    noseBridgeW_results = button_font.render(str(attributes[7][1][5]), True, (200,200,198))
+    noseBridgeW_results = button_font.render(str(attributes[7][1][5]), True, eldenFontCol)
     noseBridgeW_w, noseBridgeW_h = button_font.size(str(attributes[7][1][5]))
 
-    browRidgeH_results = button_font.render(str(attributes[7][2][0]), True, (200,200,198))
+    browRidgeH_results = button_font.render(str(attributes[7][2][0]), True, eldenFontCol)
     browRidgeH_w, browRidgeH_h = button_font.size(str(attributes[7][2][0]))
-
-    innerBrow_results = button_font.render(str(attributes[7][2][1]), True, (200,200,198))
+    innerBrow_results = button_font.render(str(attributes[7][2][1]), True, eldenFontCol)
     innerBrow_w, innerBrow_h = button_font.size(str(attributes[7][2][1]))
-
-    outerBrow_results = button_font.render(str(attributes[7][2][2]), True, (200,200,198))
+    outerBrow_results = button_font.render(str(attributes[7][2][2]), True, eldenFontCol)
     outerBrow_w, outerBrow_h = button_font.size(str(attributes[7][2][2]))
 
-    eyePos_results = button_font.render(str(attributes[7][3][0]), True, (200,200,198))
+    eyePos_results = button_font.render(str(attributes[7][3][0]), True, eldenFontCol)
     eyePos_w, eyePos_h = button_font.size(str(attributes[7][3][0]))
-
-    eyeSize_results = button_font.render(str(attributes[7][3][1]), True, (200,200,198))
+    eyeSize_results = button_font.render(str(attributes[7][3][1]), True, eldenFontCol)
     eyeSize_w, eyeSize_h = button_font.size(str(attributes[7][3][1]))
-
-    eyeSlant_results = button_font.render(str(attributes[7][3][2]), True, (200,200,198))
+    eyeSlant_results = button_font.render(str(attributes[7][3][2]), True, eldenFontCol)
     eyeSlant_w, eyeSlant_h = button_font.size(str(attributes[7][3][2]))
-
-    eyeSpacing_results = button_font.render(str(attributes[7][3][3]), True, (200,200,198))
+    eyeSpacing_results = button_font.render(str(attributes[7][3][3]), True, eldenFontCol)
     eyeSpacing_w, eyeSpacing_h = button_font.size(str(attributes[7][3][3]))
 
-    noseRidgeDepth_results = button_font.render(str(attributes[7][4][0]), True, (200,200,198))
+    noseRidgeDepth_results = button_font.render(str(attributes[7][4][0]), True, eldenFontCol)
     noseRidgeDepth_w, noseRidgeDepth_h = button_font.size(str(attributes[7][4][0]))
-
-    noseRidgeLen_results = button_font.render(str(attributes[7][4][1]), True, (200,200,198))
+    noseRidgeLen_results = button_font.render(str(attributes[7][4][1]), True, eldenFontCol)
     noseRidgeLen_w, noseRidgeLen_h = button_font.size(str(attributes[7][4][1]))
-
-    nosePos_results = button_font.render(str(attributes[7][4][2]), True, (200,200,198))
+    nosePos_results = button_font.render(str(attributes[7][4][2]), True, eldenFontCol)
     nosePos_w, nosePos_h = button_font.size(str(attributes[7][4][2]))
-
-    noseTipH_results = button_font.render(str(attributes[7][4][3]), True, (200,200,198))
+    noseTipH_results = button_font.render(str(attributes[7][4][3]), True, eldenFontCol)
     noseTipH_w, noseTipH_h = button_font.size(str(attributes[7][4][3]))
-
-    noseProt_results = button_font.render(str(attributes[7][4][4]), True, (200,200,198))
+    noseProt_results = button_font.render(str(attributes[7][4][4]), True, eldenFontCol)
     noseProt_w, noseProt_h = button_font.size(str(attributes[7][4][4]))
-
-    noseH_results = button_font.render(str(attributes[7][4][5]), True, (200,200,198))
+    noseH_results = button_font.render(str(attributes[7][4][5]), True, eldenFontCol)
     noseH_w, noseH_h = button_font.size(str(attributes[7][4][5]))
-
-    noseSlant_results = button_font.render(str(attributes[7][4][6]), True, (200,200,198))
+    noseSlant_results = button_font.render(str(attributes[7][4][6]), True, eldenFontCol)
     noseSlant_w, noseSlant_h = button_font.size(str(attributes[7][4][6]))
 
-    nostrilSlant_results = button_font.render(str(attributes[7][5][0]), True, (200,200,198))
+    nostrilSlant_results = button_font.render(str(attributes[7][5][0]), True, eldenFontCol)
     nostrilSlant_w, nostrilSlant_h = button_font.size(str(attributes[7][5][0]))
-
-    nostrilSize_results = button_font.render(str(attributes[7][5][1]), True, (200,200,198))
+    nostrilSize_results = button_font.render(str(attributes[7][5][1]), True, eldenFontCol)
     nostrilSize_w, nostrilSize_h = button_font.size(str(attributes[7][5][1]))
-
-    nostrilWidth_results = button_font.render(str(attributes[7][5][2]), True, (200,200,198))
+    nostrilWidth_results = button_font.render(str(attributes[7][5][2]), True, eldenFontCol)
     nostrilWidth_w, nostrilWidth_h = button_font.size(str(attributes[7][5][2]))
 
-    cheekHeight_results = button_font.render(str(attributes[7][6][0]), True, (200,200,198))
+    cheekHeight_results = button_font.render(str(attributes[7][6][0]), True, eldenFontCol)
     cheekHeight_w, cheekHeight_h = button_font.size(str(attributes[7][6][0]))
-
-    cheekDepth_results = button_font.render(str(attributes[7][6][1]), True, (200,200,198))
+    cheekDepth_results = button_font.render(str(attributes[7][6][1]), True, eldenFontCol)
     cheekDepth_w, cheekDepth_h = button_font.size(str(attributes[7][6][1]))
-
-    cheekWidth_results = button_font.render(str(attributes[7][6][2]), True, (200,200,198))
+    cheekWidth_results = button_font.render(str(attributes[7][6][2]), True, eldenFontCol)
     cheekWidth_w, cheekWidth_h = button_font.size(str(attributes[7][6][2]))
-
-    cheekProt_results = button_font.render(str(attributes[7][6][3]), True, (200,200,198))
+    cheekProt_results = button_font.render(str(attributes[7][6][3]), True, eldenFontCol)
     cheekProt_w, cheekProt_h = button_font.size(str(attributes[7][6][3]))
-
-    _cheeks_results = button_font.render(str(attributes[7][6][4]), True, (200,200,198))
+    _cheeks_results = button_font.render(str(attributes[7][6][4]), True, eldenFontCol)
     _cheeks_w, _cheeks_h = button_font.size(str(attributes[7][6][4]))
+
+    lipShape_results = button_font.render(str(attributes[7][7][0]), True, eldenFontCol)
+    lipShape_w, lipShape_h = button_font.size(str(attributes[7][7][0]))
+    mouthEx_results = button_font.render(str(attributes[7][7][1]), True, eldenFontCol)
+    mouthEx_w, mouthEx_h = button_font.size(str(attributes[7][7][1]))
+    lipFull_results = button_font.render(str(attributes[7][7][2]), True, eldenFontCol)
+    lipFull_w, lipFull_h = button_font.size(str(attributes[7][7][2]))
+    lipSize_results = button_font.render(str(attributes[7][7][3]), True, eldenFontCol)
+    lipSize_w, lipSize_h = button_font.size(str(attributes[7][7][3]))
+    lipProt_results = button_font.render(str(attributes[7][7][4]), True, eldenFontCol)
+    lipProt_w, lipProt_h = button_font.size(str(attributes[7][7][4]))
+    lipThick_results = button_font.render(str(attributes[7][7][5]), True, eldenFontCol)
+    lipThick_w, lipThick_h = button_font.size(str(attributes[7][7][5]))
 
 
 
@@ -371,6 +361,24 @@ def main():
         lips_img = pygame.image.load('images/ER_lips.png').convert_alpha()
         lips_button = button.Button((lips_img.get_width()/2) - (lips_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*57)+scrollWheel,lips_img,1)
+        lipShape_img = pygame.image.load('images/ER_lip_shape.png').convert_alpha()
+        lipShape_button = button.Button((lipShape_img.get_width()/2) - (lipShape_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*58)+scrollWheel,lipShape_img,1)
+        mouthEx_img = pygame.image.load('images/ER_mouth_expression.png').convert_alpha()
+        mouthEx_button = button.Button((mouthEx_img.get_width()/2) - (mouthEx_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*59)+scrollWheel,mouthEx_img,1)
+        lipFull_img = pygame.image.load('images/ER_lip_fullness.png').convert_alpha()
+        lipFull_button = button.Button((lipFull_img.get_width()/2) - (lipFull_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*60)+scrollWheel,lipFull_img,1)
+        lipSize_img = pygame.image.load('images/ER_lip_size.png').convert_alpha()
+        lipSize_button = button.Button((lipSize_img.get_width()/2) - (lipSize_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*61)+scrollWheel,lipSize_img,1)
+        lipProt_img = pygame.image.load('images/ER_lip_protrusion.png').convert_alpha()
+        lipProt_button = button.Button((lipProt_img.get_width()/2) - (lipProt_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*62)+scrollWheel,lipProt_img,1)
+        lipThick_img = pygame.image.load('images/ER_lip_thickness.png').convert_alpha()
+        lipThick_button = button.Button((lipThick_img.get_width()/2) - (lipThick_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*63)+scrollWheel,lipThick_img,1)
         
         mouth_img = pygame.image.load('images/ER_mouth.png').convert_alpha()
         mouth_button = button.Button((mouth_img.get_width()/2) - (mouth_img.get_width()/3) + (77*3) + uiOffset,
@@ -612,6 +620,30 @@ def main():
             ## Lips Section
             lips_button.draw(screen)
 
+            lipShape_button.draw(screen)
+            screen.blit(lipShape_results,
+                        (((lipShape_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lipShape_w*3) + uiOffset,
+                        213+(60*58)+(lipShape_h/2.5)+scrollWheel))
+            mouthEx_button.draw(screen)
+            screen.blit(mouthEx_results,
+                        (((mouthEx_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (mouthEx_w*3) + uiOffset,
+                        213+(60*59)+(mouthEx_h/2.5)+scrollWheel))
+            lipFull_button.draw(screen)
+            screen.blit(lipFull_results,
+                        (((lipFull_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lipFull_w*3) + uiOffset,
+                        213+(60*60)+(lipFull_h/2.5)+scrollWheel))
+            lipSize_button.draw(screen)
+            screen.blit(lipSize_results,
+                        (((lipSize_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lipSize_w*3) + uiOffset,
+                        213+(60*61)+(lipSize_h/2.5)+scrollWheel))
+            lipProt_button.draw(screen)
+            screen.blit(lipProt_results,
+                        (((lipProt_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lipProt_w*3) + uiOffset,
+                        213+(60*62)+(lipProt_h/2.5)+scrollWheel))
+            lipThick_button.draw(screen)
+            screen.blit(lipThick_results,
+                        (((lipThick_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lipThick_w*3) + uiOffset,
+                        213+(60*63)+(lipThick_h/2.5)+scrollWheel))
             ## Mouth Section
             mouth_button.draw(screen)
 
