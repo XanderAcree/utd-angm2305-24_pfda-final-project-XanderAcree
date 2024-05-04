@@ -101,6 +101,42 @@ def main():
     foreheadDepth_results = button_font.render(str(attributes[7][1][0]), True, (200,200,198))
     foreheadDepth_w, foreheadDepth_h = button_font.size(str(attributes[7][1][0]))
 
+    foreheadProt_results = button_font.render(str(attributes[7][1][1]), True, (200,200,198))
+    foreheadProt_w, foreheadProt_h = button_font.size(str(attributes[7][1][1]))
+
+    noseBridgeH_results = button_font.render(str(attributes[7][1][2]), True, (200,200,198))
+    noseBridgeH_w, noseBridgeH_h = button_font.size(str(attributes[7][1][2]))
+
+    n_bridgeProt1_results = button_font.render(str(attributes[7][1][3]), True, (200,200,198))
+    n_bridgeProt1_w, n_bridgeProt1_h = button_font.size(str(attributes[7][1][3]))
+
+    n_bridgeProt2_results = button_font.render(str(attributes[7][1][4]), True, (200,200,198))
+    n_bridgeProt2_w, n_bridgeProt2_h = button_font.size(str(attributes[7][1][4]))
+
+    noseBridgeW_results = button_font.render(str(attributes[7][1][5]), True, (200,200,198))
+    noseBridgeW_w, noseBridgeW_h = button_font.size(str(attributes[7][1][5]))
+
+    browRidgeH_results = button_font.render(str(attributes[7][2][0]), True, (200,200,198))
+    browRidgeH_w, browRidgeH_h = button_font.size(str(attributes[7][2][0]))
+
+    innerBrow_results = button_font.render(str(attributes[7][2][1]), True, (200,200,198))
+    innerBrow_w, innerBrow_h = button_font.size(str(attributes[7][2][1]))
+
+    outerBrow_results = button_font.render(str(attributes[7][2][2]), True, (200,200,198))
+    outerBrow_w, outerBrow_h = button_font.size(str(attributes[7][2][2]))
+
+    eyePos_results = button_font.render(str(attributes[7][3][0]), True, (200,200,198))
+    eyePos_w, eyePos_h = button_font.size(str(attributes[7][3][0]))
+
+    eyeSize_results = button_font.render(str(attributes[7][3][1]), True, (200,200,198))
+    eyeSize_w, eyeSize_h = button_font.size(str(attributes[7][3][1]))
+
+    eyeSlant_results = button_font.render(str(attributes[7][3][2]), True, (200,200,198))
+    eyeSlant_w, eyeSlant_h = button_font.size(str(attributes[7][3][2]))
+
+    eyeSpacing_results = button_font.render(str(attributes[7][3][3]), True, (200,200,198))
+    eyeSpacing_w, eyeSpacing_h = button_font.size(str(attributes[7][3][3]))
+
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
 
     titlePos = ((resolution[0]/2) - (title_img.get_width()/2), 0 + (title_img.get_height()/4))
@@ -173,12 +209,84 @@ def main():
         hFaceRatio_img = pygame.image.load('images/ER_horiz_face_ratio.png').convert_alpha()
         hFaceRatio_button = button.Button((hFaceRatio_img.get_width()/2) - (hFaceRatio_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*22)+scrollWheel,hFaceRatio_img,1)
+        
         foreheadGlabella_img = pygame.image.load('images/ER_forehead-glabella.png').convert_alpha()
         foreheadGlabella_button = button.Button((foreheadGlabella_img.get_width()/2) - (foreheadGlabella_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*23)+scrollWheel,foreheadGlabella_img,1)
         foreheadDepth_img = pygame.image.load('images/ER_forehead_depth.png').convert_alpha()
         foreheadDepth_button = button.Button((foreheadDepth_img.get_width()/2) - (foreheadDepth_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*24)+scrollWheel,foreheadDepth_img,1)
+        foreheadProt_img = pygame.image.load('images/ER_forehead_protrusion.png').convert_alpha()
+        foreheadProt_button = button.Button((foreheadProt_img.get_width()/2) - (foreheadProt_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*25)+scrollWheel,foreheadProt_img,1)
+        noseBridgeH_img = pygame.image.load('images/ER_nose_bridge_h.png').convert_alpha()
+        noseBridgeH_button = button.Button((noseBridgeH_img.get_width()/2) - (noseBridgeH_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*26)+scrollWheel,noseBridgeH_img,1)
+        n_bridgeProt1_img = pygame.image.load('images/ER_bridge_protrusion_1.png').convert_alpha()
+        n_bridgeProt1_button = button.Button((n_bridgeProt1_img.get_width()/2) - (n_bridgeProt1_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*27)+scrollWheel,n_bridgeProt1_img,1)
+        n_bridgeProt2_img = pygame.image.load('images/ER_bridge_protrusion_2.png').convert_alpha()
+        n_bridgeProt2_button = button.Button((n_bridgeProt2_img.get_width()/2) - (n_bridgeProt2_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*28)+scrollWheel,n_bridgeProt2_img,1)
+        noseBridgeW_img = pygame.image.load('images/ER_nose_bridge_w.png').convert_alpha()
+        noseBridgeW_button = button.Button((noseBridgeW_img.get_width()/2) - (noseBridgeW_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*29)+scrollWheel,noseBridgeW_img,1)
+        browRidge_img = pygame.image.load('images/ER_brow-ridge.png').convert_alpha()
+        browRidge_button = button.Button((browRidge_img.get_width()/2) - (browRidge_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*30)+scrollWheel,browRidge_img,1)
+        browRidgeH_img = pygame.image.load('images/ER_brow_ridge_height.png').convert_alpha()
+        browRidgeH_button = button.Button((browRidgeH_img.get_width()/2) - (browRidgeH_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*31)+scrollWheel,browRidgeH_img,1)
+        innerBrow_img = pygame.image.load('images/ER_inner_brow_ridge.png').convert_alpha()
+        innerBrow_button = button.Button((innerBrow_img.get_width()/2) - (innerBrow_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*32)+scrollWheel,innerBrow_img,1)
+        outerBrow_img = pygame.image.load('images/ER_outer_brow_ridge.png').convert_alpha()
+        outerBrow_button = button.Button((outerBrow_img.get_width()/2) - (outerBrow_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*33)+scrollWheel,outerBrow_img,1)
+        
+        eyes_img = pygame.image.load('images/ER_eyes.png').convert_alpha()
+        eyes_button = button.Button((eyes_img.get_width()/2) - (eyes_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*34)+scrollWheel,eyes_img,1)
+        eyePos_img = pygame.image.load('images/ER_eye_pos.png').convert_alpha()
+        eyePos_button = button.Button((eyePos_img.get_width()/2) - (eyePos_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*35)+scrollWheel,eyePos_img,1)
+        eyeSize_img = pygame.image.load('images/ER_eye_size.png').convert_alpha()
+        eyeSize_button = button.Button((eyeSize_img.get_width()/2) - (eyeSize_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*36)+scrollWheel,eyeSize_img,1)
+        eyeSlant_img = pygame.image.load('images/ER_eye_slant.png').convert_alpha()
+        eyeSlant_button = button.Button((eyeSlant_img.get_width()/2) - (eyeSlant_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*37)+scrollWheel,eyeSlant_img,1)
+        eyeSpacing_img = pygame.image.load('images/ER_eye_spacing.png').convert_alpha()
+        eyeSpacing_button = button.Button((eyeSpacing_img.get_width()/2) - (eyeSpacing_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*38)+scrollWheel,eyeSpacing_img,1)
+        
+        noseRidge_img = pygame.image.load('images/ER_nose_ridge.png').convert_alpha()
+        noseRidge_button = button.Button((noseRidge_img.get_width()/2) - (noseRidge_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*39)+scrollWheel,noseRidge_img,1)
+        
+        nostrils_img = pygame.image.load('images/ER_nostrils.png').convert_alpha()
+        nostrils_button = button.Button((nostrils_img.get_width()/2) - (nostrils_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*47)+scrollWheel,nostrils_img,1)
+        
+        cheeks_img = pygame.image.load('images/ER_cheeks.png').convert_alpha()
+        cheeks_button = button.Button((cheeks_img.get_width()/2) - (cheeks_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*51)+scrollWheel,cheeks_img,1)
+        
+        lips_img = pygame.image.load('images/ER_lips.png').convert_alpha()
+        lips_button = button.Button((lips_img.get_width()/2) - (lips_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*57)+scrollWheel,lips_img,1)
+        
+        mouth_img = pygame.image.load('images/ER_mouth.png').convert_alpha()
+        mouth_button = button.Button((mouth_img.get_width()/2) - (mouth_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*64)+scrollWheel,mouth_img,1)
+        
+        chin_img = pygame.image.load('images/ER_chin.png').convert_alpha()
+        chin_button = button.Button((chin_img.get_width()/2) - (chin_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*71)+scrollWheel,chin_img,1)
+        
+        jaw_img = pygame.image.load('images/ER_jaw.png').convert_alpha()
+        jaw_button = button.Button((jaw_img.get_width()/2) - (jaw_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*79)+scrollWheel,jaw_img,1)
         
         #Randomizer Results Screen
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
@@ -280,7 +388,82 @@ def main():
             foreheadDepth_button.draw(screen)
             screen.blit(foreheadDepth_results,
                         (((foreheadDepth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (foreheadDepth_w*3) + uiOffset,
-                        213+(60*22)+(foreheadDepth_h/2.5)+scrollWheel))
+                        213+(60*24)+(foreheadDepth_h/2.5)+scrollWheel))
+            foreheadProt_button.draw(screen)
+            screen.blit(foreheadProt_results,
+                        (((foreheadProt_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (foreheadProt_w*3) + uiOffset,
+                        213+(60*25)+(foreheadProt_h/2.5)+scrollWheel))
+            noseBridgeH_button.draw(screen)
+            screen.blit(noseBridgeH_results,
+                        (((noseBridgeH_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseBridgeH_w*3) + uiOffset,
+                        213+(60*26)+(noseBridgeH_h/2.5)+scrollWheel))
+            n_bridgeProt1_button.draw(screen)
+            screen.blit(n_bridgeProt1_results,
+                        (((n_bridgeProt1_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (n_bridgeProt1_w*3) + uiOffset,
+                        213+(60*27)+(n_bridgeProt1_h/2.5)+scrollWheel))
+            n_bridgeProt2_button.draw(screen)
+            screen.blit(n_bridgeProt2_results,
+                        (((n_bridgeProt2_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (n_bridgeProt2_w*3) + uiOffset,
+                        213+(60*28)+(n_bridgeProt2_h/2.5)+scrollWheel))
+            noseBridgeW_button.draw(screen)
+            screen.blit(noseBridgeW_results,
+                        (((noseBridgeW_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (noseBridgeW_w*3) + uiOffset,
+                        213+(60*29)+(noseBridgeW_h/2.5)+scrollWheel))
+            
+            ## Brow Ridge Section
+            browRidge_button.draw(screen)
+
+            browRidgeH_button.draw(screen)
+            screen.blit(browRidgeH_results,
+                        (((browRidgeH_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (browRidgeH_w*3) + uiOffset,
+                        213+(60*31)+(browRidgeH_h/2.5)+scrollWheel))
+            innerBrow_button.draw(screen)
+            screen.blit(innerBrow_results,
+                        (((innerBrow_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (innerBrow_w*3) + uiOffset,
+                        213+(60*32)+(innerBrow_h/2.5)+scrollWheel))
+            outerBrow_button.draw(screen)
+            screen.blit(outerBrow_results,
+                        (((outerBrow_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (outerBrow_w*3) + uiOffset,
+                        213+(60*33)+(outerBrow_h/2.5)+scrollWheel))
+            ## Eyes Section
+            eyes_button.draw(screen)
+
+            eyePos_button.draw(screen)
+            screen.blit(eyePos_results,
+                        (((eyePos_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (eyePos_w*3) + uiOffset,
+                        213+(60*35)+(eyePos_h/2.5)+scrollWheel))
+            eyeSize_button.draw(screen)
+            screen.blit(eyeSize_results,
+                        (((eyeSize_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (eyeSize_w*3) + uiOffset,
+                        213+(60*36)+(eyeSize_h/2.5)+scrollWheel))
+            eyeSlant_button.draw(screen)
+            screen.blit(eyeSlant_results,
+                        (((eyeSlant_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (eyeSlant_w*3) + uiOffset,
+                        213+(60*37)+(eyeSlant_h/2.5)+scrollWheel))
+            eyeSpacing_button.draw(screen)
+            screen.blit(eyeSpacing_results,
+                        (((eyeSpacing_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (eyeSpacing_w*3) + uiOffset,
+                        213+(60*38)+(eyeSpacing_h/2.5)+scrollWheel))
+            ## Nose Ridge Section
+            noseRidge_button.draw(screen)
+
+            ## Nostrils Section
+            nostrils_button.draw(screen)
+
+            ## Cheeks Section
+            cheeks_button.draw(screen)
+
+            ## Lips Section
+            lips_button.draw(screen)
+
+            ## Mouth Section
+            mouth_button.draw(screen)
+
+            ## Chin Section
+            chin_button.draw(screen)
+
+            ## Jaw Section
+            jaw_button.draw(screen)
             
             # Randomizer Screen Title Overlay
             screen.blit(randResults_grad_title, (((resolution[0]) - (randResults_grad.get_width())),
@@ -315,7 +498,7 @@ def main():
             if event.type == pygame.KEYDOWN and pygame.key.get_pressed()[pygame.K_q]:
                 isRandButtonClicked = False
             if event.type == pygame.MOUSEWHEEL:
-                scrollWheel += (event.y)*10
+                scrollWheel += (event.y)*25
 
         pygame.display.update()
 
