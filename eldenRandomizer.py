@@ -185,6 +185,29 @@ def main():
     mouthChinDist_results = button_font.render(str(attributes[7][8][5]), True, eldenFontCol)
     mouthChinDist_w, mouthChinDist_h = button_font.size(str(attributes[7][8][5]))
 
+    chinTipPos_results = button_font.render(str(attributes[7][9][0]), True, eldenFontCol)
+    chinTipPos_w, chinTipPos_h = button_font.size(str(attributes[7][9][0]))
+    chinLen_results = button_font.render(str(attributes[7][9][1]), True, eldenFontCol)
+    chinLen_w, chinLen_h = button_font.size(str(attributes[7][9][1]))
+    chinProt_results = button_font.render(str(attributes[7][9][2]), True, eldenFontCol)
+    chinProt_w, chinProt_h = button_font.size(str(attributes[7][9][2]))
+    chinDepth_results = button_font.render(str(attributes[7][9][3]), True, eldenFontCol)
+    chinDepth_w, chinDepth_h = button_font.size(str(attributes[7][9][3]))
+    chinSize_results = button_font.render(str(attributes[7][9][4]), True, eldenFontCol)
+    chinSize_w, chinSize_h = button_font.size(str(attributes[7][9][4]))
+    chinHeight_results = button_font.render(str(attributes[7][9][5]), True, eldenFontCol)
+    chinHeight_w, chinHeight_h = button_font.size(str(attributes[7][9][5]))
+    chinWidth_results = button_font.render(str(attributes[7][9][6]), True, eldenFontCol)
+    chinWidth_w, chinWidth_h = button_font.size(str(attributes[7][9][6]))
+
+    jawProt_results = button_font.render(str(attributes[7][10][0]), True, eldenFontCol)
+    jawProt_w, jawProt_h = button_font.size(str(attributes[7][10][0]))
+    jawWidth_results = button_font.render(str(attributes[7][10][1]), True, eldenFontCol)
+    jawWidth_w, jawWidth_h = button_font.size(str(attributes[7][10][1]))
+    lowerJaw_results = button_font.render(str(attributes[7][10][2]), True, eldenFontCol)
+    lowerJaw_w, lowerJaw_h = button_font.size(str(attributes[7][10][2]))
+    jawContour_results = button_font.render(str(attributes[7][10][3]), True, eldenFontCol)
+    jawContour_w, jawContour_h = button_font.size(str(attributes[7][10][3]))
 
 
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
@@ -418,10 +441,43 @@ def main():
         chin_img = pygame.image.load('images/ER_chin.png').convert_alpha()
         chin_button = button.Button((chin_img.get_width()/2) - (chin_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*71)+scrollWheel,chin_img,1)
+        chinTipPos_img = pygame.image.load('images/ER_chin_tip_pos.png').convert_alpha()
+        chinTipPos_button = button.Button((chinTipPos_img.get_width()/2) - (chinTipPos_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*72)+scrollWheel,chinTipPos_img,1)
+        chinLen_img = pygame.image.load('images/ER_chin_len.png').convert_alpha()
+        chinLen_button = button.Button((chinLen_img.get_width()/2) - (chinLen_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*73)+scrollWheel,chinLen_img,1)
+        chinProt_img = pygame.image.load('images/ER_chin_prot.png').convert_alpha()
+        chinProt_button = button.Button((chinProt_img.get_width()/2) - (chinProt_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*74)+scrollWheel,chinProt_img,1)
+        chinDepth_img = pygame.image.load('images/ER_chin_depth.png').convert_alpha()
+        chinDepth_button = button.Button((chinDepth_img.get_width()/2) - (chinDepth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*75)+scrollWheel,chinDepth_img,1)
+        chinSize_img = pygame.image.load('images/ER_chin_size.png').convert_alpha()
+        chinSize_button = button.Button((chinSize_img.get_width()/2) - (chinSize_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*76)+scrollWheel,chinSize_img,1)
+        chinHeight_img = pygame.image.load('images/ER_chin_height.png').convert_alpha()
+        chinHeight_button = button.Button((chinHeight_img.get_width()/2) - (chinHeight_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*77)+scrollWheel,chinHeight_img,1)
+        chinWidth_img = pygame.image.load('images/ER_chin_width.png').convert_alpha()
+        chinWidth_button = button.Button((chinWidth_img.get_width()/2) - (chinWidth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*78)+scrollWheel,chinWidth_img,1)
         
         jaw_img = pygame.image.load('images/ER_jaw.png').convert_alpha()
         jaw_button = button.Button((jaw_img.get_width()/2) - (jaw_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*79)+scrollWheel,jaw_img,1)
+        jawProt_img = pygame.image.load('images/ER_jaw_prot.png').convert_alpha()
+        jawProt_button = button.Button((jawProt_img.get_width()/2) - (jawProt_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*80)+scrollWheel,jawProt_img,1)
+        jawWidth_img = pygame.image.load('images/ER_jaw_width.png').convert_alpha()
+        jawWidth_button = button.Button((jawWidth_img.get_width()/2) - (jawWidth_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*81)+scrollWheel,jawWidth_img,1)
+        lowerJaw_img = pygame.image.load('images/ER_lower_jaw.png').convert_alpha()
+        lowerJaw_button = button.Button((lowerJaw_img.get_width()/2) - (lowerJaw_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*82)+scrollWheel,lowerJaw_img,1)
+        jawContour_img = pygame.image.load('images/ER_jaw_contour.png').convert_alpha()
+        jawContour_button = button.Button((jawContour_img.get_width()/2) - (jawContour_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*83)+scrollWheel,jawContour_img,1)
         
         #Randomizer Results Screen
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
@@ -705,9 +761,50 @@ def main():
                         213+(60*70)+(mouthChinDist_h/2.5)+scrollWheel))
             ## Chin Section
             chin_button.draw(screen)
-
+            
+            chinTipPos_button.draw(screen)
+            screen.blit(chinTipPos_results,
+                        (((chinTipPos_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (chinTipPos_w*3) + uiOffset,
+                        213+(60*72)+(chinTipPos_h/2.5)+scrollWheel))
+            chinLen_button.draw(screen)
+            screen.blit(chinLen_results,
+                        (((chinLen_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (chinLen_w*3) + uiOffset,
+                        213+(60*73)+(chinLen_h/2.5)+scrollWheel))
+            chinProt_button.draw(screen)
+            screen.blit(chinProt_results,
+                        (((chinProt_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (chinProt_w*3) + uiOffset,
+                        213+(60*74)+(chinProt_h/2.5)+scrollWheel))
+            chinDepth_button.draw(screen)
+            screen.blit(chinDepth_results,
+                        (((chinDepth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (chinDepth_w*3) + uiOffset,
+                        213+(60*75)+(chinDepth_h/2.5)+scrollWheel))
+            chinSize_button.draw(screen)
+            screen.blit(chinSize_results,
+                        (((chinSize_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (chinSize_w*3) + uiOffset,
+                        213+(60*76)+(chinSize_h/2.5)+scrollWheel))
+            chinHeight_button.draw(screen)
+            screen.blit(chinHeight_results,
+                        (((chinHeight_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (chinHeight_w*3) + uiOffset,
+                        213+(60*77)+(chinHeight_h/2.5)+scrollWheel))
+            chinWidth_button.draw(screen)
+            screen.blit(chinWidth_results,
+                        (((chinWidth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (chinWidth_w*3) + uiOffset,
+                        213+(60*78)+(chinWidth_h/2.5)+scrollWheel))
             ## Jaw Section
             jaw_button.draw(screen)
+
+            jawProt_button.draw(screen)
+            screen.blit(jawProt_results,
+                        (((jawProt_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (jawProt_w*3) + uiOffset,
+                        213+(60*80)+(jawProt_h/2.5)+scrollWheel))
+            jawWidth_button.draw(screen)
+            screen.blit(jawWidth_results,
+                        (((jawWidth_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (jawWidth_w*3) + uiOffset,
+                        213+(60*81)+(jawWidth_h/2.5)+scrollWheel))
+            lowerJaw_button.draw(screen)
+            screen.blit(lowerJaw_results,
+                        (((lowerJaw_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lowerJaw_w*3) + uiOffset,
+                        213+(60*82)+(lowerJaw_h/2.5)+scrollWheel))
             
             # Randomizer Screen Title Overlay
             screen.blit(randResults_grad_title, (((resolution[0]) - (randResults_grad.get_width())),
