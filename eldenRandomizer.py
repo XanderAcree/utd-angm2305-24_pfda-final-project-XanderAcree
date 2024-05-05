@@ -271,7 +271,7 @@ def main():
     eyeShadowLower_w, eyeShadowLower_h = button_font.size(str(attributes[14][4]))
     cosmeticsCheeks_results = button_font.render(str(attributes[14][6]), True, eldenFontCol)
     cosmeticsCheeks_w, cosmeticsCheeks_h = button_font.size(str(attributes[14][6]))
-    lipstick_results = button_font.render(str(attributes[14][8]))
+    lipstick_results = button_font.render(str(attributes[14][8]), True, eldenFontCol)
     lipstick_w, lipstick_h = button_font.size(str(attributes[14][8]))
 
 
@@ -296,6 +296,11 @@ def main():
     print(f"Left Iris Clouding Color: {attributes[12][9]}") ## LEFT IRIS CLOUDING COLOR
     print(f"Left Sclera/Eye White Color: {attributes[12][10]}") ## LEFT SCLERA/EYE WHITE COLOR
     print(f"Dark Circles Color: {attributes[13][3]}") ## DARK CIRCLES COLOR
+    print(f"Eyeliner Color: {attributes[14][1]}") ## EYELINER COLOR
+    print(f"Upper Eyeshadow Color: {attributes[14][3]}") ## UPPER EYESHADOW COLOR
+    print(f"Lower Eyeshadow Color: {attributes[14][5]}") ## LOWER EYESHADOW COLOR
+    print(f"Cheeks Color: {attributes[14][7]}") ## CHEEKS COLOR
+    print(f"Lipstick Color: {attributes[14][9]}") ## LIPSTICK COLOR
 
     while running:
         origin_img = pygame.image.load('images/ER_origin.png').convert_alpha()
