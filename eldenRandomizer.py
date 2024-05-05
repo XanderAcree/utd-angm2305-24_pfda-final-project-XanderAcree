@@ -210,6 +210,15 @@ def main():
     jawContour_w, jawContour_h = button_font.size(str(attributes[7][10][3]))
 
 
+    hairstyle_results = button_font.render(str(attributes[8][0]), True, eldenFontCol)
+    hairstyle_w, hairstyle_h = button_font.size(str(attributes[8][0]))
+    hairLuster_results = button_font.render(str(attributes[8][2]), True, eldenFontCol)
+    hairLuster_w, hairLuster_h = button_font.size(str(attributes[8][2]))
+    hairRootDark_results = button_font.render(str(attributes[8][3]), True, eldenFontCol)
+    hairRootDark_w, hairRootDark_h = button_font.size(str(attributes[8][3]))
+    hairWhite_results = button_font.render(str(attributes[8][4]), True, eldenFontCol)
+    hairWhite_w, hairWhite_h = button_font.size(str(attributes[8][4]))
+
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
 
     titlePos = ((resolution[0]/2) - (title_img.get_width()/2), 0 + (title_img.get_height()/4))
@@ -478,6 +487,26 @@ def main():
         jawContour_img = pygame.image.load('images/ER_jaw_contour.png').convert_alpha()
         jawContour_button = button.Button((jawContour_img.get_width()/2) - (jawContour_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*83)+scrollWheel,jawContour_img,1)
+        
+
+        hair_img = pygame.image.load('images/ER_hair.png').convert_alpha()
+        hair_button = button.Button((hair_img.get_width()/2) - (hair_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*84)+scrollWheel,hair_img,1)
+        hairstyle_img = pygame.image.load('images/ER_hairstyle.png').convert_alpha()
+        hairstyle_button = button.Button((hairstyle_img.get_width()/2) - (hair_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*85)+scrollWheel,hairstyle_img,1)
+        hairCol_img = pygame.image.load('images/ER_hair_col.png').convert_alpha()
+        hairCol_button = button.Button((hairCol_img.get_width()/2) - (hairCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*86)+scrollWheel,hairCol_img,1)
+        hairLuster_img = pygame.image.load('images/ER_hairluster.png').convert_alpha()
+        hairLuster_button = button.Button((hairLuster_img.get_width()/2) - (hairLuster_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*87)+scrollWheel,hairLuster_img,1)
+        hairRootDark_img = pygame.image.load('images/ER_hair_root_dark.png').convert_alpha()
+        hairRootDark_button = button.Button((hairRootDark_img.get_width()/2) - (hairRootDark_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*88)+scrollWheel,hairRootDark_img,1)
+        hairWhite_img = pygame.image.load('images/ER_hair_root_dark.png').convert_alpha()
+        hairWhite_button = button.Button((hairWhite_img.get_width()/2) - (hairWhite_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*89)+scrollWheel,hairWhite_img,1)
         
         #Randomizer Results Screen
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
@@ -805,7 +834,36 @@ def main():
             screen.blit(lowerJaw_results,
                         (((lowerJaw_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (lowerJaw_w*3) + uiOffset,
                         213+(60*82)+(lowerJaw_h/2.5)+scrollWheel))
-            
+            jawContour_button.draw(screen)
+            screen.blit(jawContour_results,
+                        (((jawContour_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (jawContour_w*3) + uiOffset,
+                        213+(60*83)+(jawContour_h/2.5)+scrollWheel))
+
+            ## Hair Section
+            hair_button.draw(screen)
+
+            hairstyle_button.draw(screen)
+            screen.blit(hairstyle_results,
+                        (((hairstyle_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (hairstyle_w*3) + uiOffset,
+                        213+(60*85)+(hairstyle_h/2.5)+scrollWheel))
+
+            hairCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            hairCol_y = 401+40-(hairCol_img.get_height()/2) + (60*83)
+            hairCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[8][1],(hairCol_x + uiOffset,hairCol_y+scrollWheel,380,31))
+            hairLuster_button.draw(screen)
+            screen.blit(hairLuster_results,
+                        (((hairLuster_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (hairLuster_w*3) + uiOffset,
+                        213+(60*87)+(hairLuster_h/2.5)+scrollWheel))
+            hairRootDark_button.draw(screen)
+            screen.blit(hairRootDark_results,
+                        (((hairRootDark_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (hairRootDark_w*3) + uiOffset,
+                        213+(60*88)+(hairRootDark_h/2.5)+scrollWheel))
+            hairWhite_button.draw(screen)
+            screen.blit(hairWhite_results,
+                        (((hairWhite_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (hairWhite_w*3) + uiOffset,
+                        213+(60*88)+(hairWhite_h/2.5)+scrollWheel))
+
             # Randomizer Screen Title Overlay
             screen.blit(randResults_grad_title, (((resolution[0]) - (randResults_grad.get_width())),
                                         ((resolution[1]) - (randResults_grad_title.get_height()))))
