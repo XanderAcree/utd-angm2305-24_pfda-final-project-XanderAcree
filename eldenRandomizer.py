@@ -262,8 +262,17 @@ def main():
     skinLuster_w, skinLuster_h = button_font.size(str(attributes[13][1]))
     darkCircles_results = button_font.render(str(attributes[13][2]), True, eldenFontCol)
     darkCircles_w, darkCircles_h = button_font.size(str(attributes[13][2]))
-    darkCirclesCol_results = button_font.render(str(attributes[13][3]), True, eldenFontCol)
-    darkCirclesCol_w, darkCirclesCol_h = button_font.size(str(attributes[13][3]))
+
+    eyeliner_results = button_font.render(str(attributes[14][0]), True, eldenFontCol)
+    eyeliner_w, eyeliner_h = button_font.size(str(attributes[14][0]))
+    eyeshadowUpper_results = button_font.render(str(attributes[14][2]), True, eldenFontCol)
+    eyeShadowUpper_w, eyeShadowUpper_h = button_font.size(str(attributes[14][2]))
+    eyeShadowLower_results = button_font.render(str(attributes[14][4]), True, eldenFontCol)
+    eyeShadowLower_w, eyeShadowLower_h = button_font.size(str(attributes[14][4]))
+    cosmeticsCheeks_results = button_font.render(str(attributes[14][6]), True, eldenFontCol)
+    cosmeticsCheeks_w, cosmeticsCheeks_h = button_font.size(str(attributes[14][6]))
+    lipstick_results = button_font.render(str(attributes[14][8]))
+    lipstick_w, lipstick_h = button_font.size(str(attributes[14][8]))
 
 
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
@@ -274,6 +283,7 @@ def main():
     uiOffset = -(77*2)
 
     # DEBUG FOR COLORS
+    print("---------- DEBUG VALUES FOR COLOR OUTPUTS ----------")
     print(f"Skin Color: {attributes[5]}") ## SKIN COLOR
     print(f"Hair Color: {attributes[8][1]}") ## HAIR COLOR
     print(f"Brow Color: {attributes[9][1]}") ## BROW COLOR
@@ -658,13 +668,57 @@ def main():
         eyePosL_button = button.Button((eyePosL_img.get_width()/2) - (eyePosL_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*118)+scrollWheel,eyePosL_img,1)
         
+        #Skin Features
         skinFeatures_img = pygame.image.load('images/ER_skin_features.png').convert_alpha()
         skinFeatures_button = button.Button((skinFeatures_img.get_width()/2) - (skinFeatures_img.get_width()/3) + (77*3) + uiOffset,
                                     213+(60*119)+scrollWheel,skinFeatures_img,1)
-        pores_img = pygame.image.load('images/ER_pores.img').convert_alpha()
+        pores_img = pygame.image.load('images/ER_pores.png').convert_alpha()
         pores_button = button.Button((pores_img.get_width()/2) - (pores_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*120)+scrollWheel,pores_img,1)
+        skinLuster_img = pygame.image.load('images/ER_skin_luster.png').convert_alpha()
+        skinLuster_button = button.Button((skinLuster_img.get_width()/2) - (skinLuster_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*121)+scrollWheel,skinLuster_img,1)
+        darkCircles_img = pygame.image.load('images/ER_dark_circles.png').convert_alpha()
+        darkCircles_button = button.Button((darkCircles_img.get_width()/2) - (darkCircles_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*122)+scrollWheel,darkCircles_img,1)
+        darkCirclesCol_img = pygame.image.load('images/ER_dark_circles_col.png').convert_alpha()
+        darkCirclesCol_button = button.Button((darkCirclesCol_img.get_width()/2) - (darkCirclesCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*123)+scrollWheel,darkCirclesCol_img,1)
         
+        #Cosmetics
+        cosmetics_img = pygame.image.load('images/ER_cosmetics.png').convert_alpha()
+        cosmetics_button = button.Button((cosmetics_img.get_width()/2) - (cosmetics_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*124)+scrollWheel,cosmetics_img,1)
+        eyeliner_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        eyeliner_button = button.Button((eyeliner_img.get_width()/2) - (eyeliner_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*125)+scrollWheel,eyeliner_img,1)
+        eyelinerCol_img = pygame.image.load('images/ER_eyeliner_col.png').convert_alpha()
+        eyelinerCol_button = button.Button((eyelinerCol_img.get_width()/2) - (eyelinerCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*126)+scrollWheel,eyelinerCol_img,1)
+        eyeshadowUpper_img = pygame.image.load('images/ER_eyeshadow_upper.png').convert_alpha()
+        eyeshadowUpper_button = button.Button((eyeshadowUpper_img.get_width()/2) - (eyeshadowUpper_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*127)+scrollWheel,eyeshadowUpper_img,1)
+        eyeShadowUpperCol_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        eyeShadowUpperCol_button = button.Button((eyeShadowUpperCol_img.get_width()/2) - (eyeShadowUpperCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*128)+scrollWheel,eyeShadowUpperCol_img,1)
+        eyeshadowLower_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        eyeshadowLower_button = button.Button((eyeshadowLower_img.get_width()/2) - (eyeshadowLower_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*129)+scrollWheel,eyeshadowLower_img,1)
+        eyeShadowLowerCol_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        eyeShadowLowerCol_button = button.Button((eyeShadowLowerCol_img.get_width()/2) - (eyeShadowLowerCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*130)+scrollWheel,eyeShadowLowerCol_img,1)
+        cosmeticsCheeks_img = pygame.image.load('images/ER__cheeks.png').convert_alpha()
+        cosmeticsCheeks_button = button.Button((cosmeticsCheeks_img.get_width()/2) - (cosmeticsCheeks_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*131)+scrollWheel,cosmeticsCheeks_img,1)
+        cheeksCol_img = pygame.image.load('images/ER_cheeks_col.png').convert_alpha()
+        cheeksCol_button = button.Button((cheeksCol_img.get_width()/2) - (cheeksCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*132)+scrollWheel,cheeksCol_img,1)
+        lipstick_img = pygame.image.load('images/ER_lipstick.png').convert_alpha()
+        lipstick_button = button.Button((lipstick_img.get_width()/2) - (lipstick_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*133)+scrollWheel,lipstick_img,1)
+        lipstickCol_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        lipstickCol_button = button.Button((lipstickCol_img.get_width()/2) - (lipstickCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*134)+scrollWheel,lipstickCol_img,1)
         
         #Randomizer Results Screen
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
@@ -1047,13 +1101,13 @@ def main():
                         (((browWhiteHairs_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
                         213+(60*95)+(browWhiteHairs_h/2.5)+scrollWheel))
             
+            #Facial Hair
             facialHair_button.draw(screen)
 
             beard_button.draw(screen)
             screen.blit(beard_results,
                         (((beard_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
                         213+(60*97)+(beard_h/2.5)+scrollWheel))
-
             facialHairCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
             facialHairCol_y = 401+40-(facialHairCol_img.get_height()/2) + (60*95)
             facialHairCol_button.draw(screen)
@@ -1075,6 +1129,7 @@ def main():
                         (((facialHairStubble_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
                         213+(60*102)+(facialHairStubble_h/2.5)+scrollWheel))
             
+            #Eyelashes
             eyelash_button.draw(screen)
             eyelash__button.draw(screen)
             screen.blit(eyelash_results,
@@ -1114,9 +1169,9 @@ def main():
                         213+(60*112)+(eyePosR_h/2.5)+scrollWheel))
             #Eye L
             irisSizeL_button.draw(screen)
-            screen.blit(irisSizeR_results,
-                        (((irisSizeR_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
-                        213+(60*113)+(irisSizeR_h/2.5)+scrollWheel))
+            screen.blit(irisSizeL_results,
+                        (((irisSizeL_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*113)+(irisSizeL_h/2.5)+scrollWheel))
             irisColL_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
             irisColL_y = 401+40-(irisColL_img.get_height()/2) + (60*111)
             irisColL_button.draw(screen)
@@ -1138,6 +1193,68 @@ def main():
                         (((eyePosL_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
                         213+(60*118)+(eyePosL_h/2.5)+scrollWheel))
             
+            #Skin Features
+            skinFeatures_button.draw(screen)
+            pores_button.draw(screen)
+            screen.blit(pores_results,
+                        (((pores_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*120)+(pores_h/2.5)+scrollWheel))
+            skinLuster_button.draw(screen)
+            screen.blit(skinLuster_results,
+                        (((skinLuster_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*121)+(skinLuster_h/2.5)+scrollWheel))
+            darkCircles_button.draw(screen)
+            screen.blit(darkCircles_results,
+                        (((darkCircles_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*122)+(darkCircles_h/2.5)+scrollWheel))
+            darkCircCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            darkCircCol_y = 401+40-(darkCirclesCol_img.get_height()/2) + (60*120)
+            darkCirclesCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[13][3],(darkCircCol_x + uiOffset,darkCircCol_y+scrollWheel,380,31))
+
+            #Cosmetics
+            cosmetics_button.draw(screen)
+            eyeliner_button.draw(screen)
+            screen.blit(eyeliner_results,
+                        (((eyeliner_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*125)+(eyeliner_h/2.5)+scrollWheel))
+            eyelinerCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            eyelinerCol_y = 401+40-(darkCirclesCol_img.get_height()/2) + (60*(126-3))
+            eyelinerCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[14][1],(eyelinerCol_x + uiOffset,eyelinerCol_y+scrollWheel,380,31))
+            eyeshadowUpper_button.draw(screen)
+            screen.blit(eyeshadowUpper_results,
+                        (((eyeshadowUpper_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*127)+(eyeShadowUpper_h/2.5)+scrollWheel))
+            eyeshadowUpperCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            eyeshadowUpperCol_y = 401+40-(eyeShadowUpperCol_img.get_height()/2) + (60*(128-3))
+            eyeShadowUpperCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[14][3],(eyeshadowUpperCol_x + uiOffset,eyeshadowUpperCol_y+scrollWheel,380,31))
+            eyeshadowLower_button.draw(screen)
+            screen.blit(eyeShadowLower_results,
+                        (((eyeshadowLower_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*129)+(eyeShadowLower_h/2.5)+scrollWheel))
+            eyeshadowLowerCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            eyeshadowLowerCol_y = 401+40-(eyeShadowUpperCol_img.get_height()/2) + (60*(130-3))
+            eyeShadowLowerCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[14][5],(eyeshadowLowerCol_x + uiOffset,eyeshadowLowerCol_y+scrollWheel,380,31))
+            cosmeticsCheeks_button.draw(screen)
+            screen.blit(cosmeticsCheeks_results,
+                        (((cosmeticsCheeks_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*131)+(cosmeticsCheeks_h/2.5)+scrollWheel))
+            cheeksCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            cheeksCol_y = 401+40-(cheeksCol_img.get_height()/2) + (60*(132-3))
+            cheeksCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[14][7],(cheeksCol_x + uiOffset,cheeksCol_y+scrollWheel,380,31))
+            lipstick_button.draw(screen)
+            screen.blit(lipstick_results,
+                        (((lipstick_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*132)+(lipstick_h/2.5)+scrollWheel))
+            lipstickCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            lipstickCol_y = 401+40-(lipstickCol_img.get_height()/2) + (60*(133-3))
+            lipstickCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[14][9],(lipstickCol_x + uiOffset,lipstickCol_y+scrollWheel,380,31))
+
 
             
             # Randomizer Screen Title Overlay
