@@ -218,6 +218,16 @@ def main():
     hairRootDark_w, hairRootDark_h = button_font.size(str(attributes[8][3]))
     hairWhite_results = button_font.render(str(attributes[8][4]), True, eldenFontCol)
     hairWhite_w, hairWhite_h = button_font.size(str(attributes[8][4]))
+    
+    brow_results = button_font.render(str(attributes[9][0]), True, eldenFontCol)
+    brow_w, brow_h = button_font.size(str(attributes[9][0]))
+    browLuster_results = button_font.render(str(attributes[9][2]), True, eldenFontCol)
+    browLuster_w, browLuster_h = button_font.size(str(attributes[9][2]))
+    browRootDark_results = button_font.render(str(attributes[9][3]), True, eldenFontCol)
+    browRootDark_w, browRootDark_h = button_font.size(str(attributes[9][3]))
+    browWhiteHairs_results = button_font.render(str(attributes[9][4]), True, eldenFontCol)
+    browWhiteHairs_w, browWhiteHairs_h = button_font.size(str(attributes[9][4]))
+
 
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
 
@@ -227,7 +237,9 @@ def main():
     uiOffset = -(77*2)
 
     # DEBUG FOR COLORS
-    print(attributes[5]) ## SKIN COLOR
+    print(f"Skin Color: {attributes[5]}") ## SKIN COLOR
+    print(f"Hair Color: {attributes[8][1]}") ## HAIR COLOR
+    print(f"Brow Color: {attributes[9][1]}") ## BROW COLOR
 
     while running:
         origin_img = pygame.image.load('images/ER_origin.png').convert_alpha()
@@ -504,9 +516,28 @@ def main():
         hairRootDark_img = pygame.image.load('images/ER_hair_root_dark.png').convert_alpha()
         hairRootDark_button = button.Button((hairRootDark_img.get_width()/2) - (hairRootDark_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*88)+scrollWheel,hairRootDark_img,1)
-        hairWhite_img = pygame.image.load('images/ER_hair_root_dark.png').convert_alpha()
+        hairWhite_img = pygame.image.load('images/ER_hairwhite.png').convert_alpha()
         hairWhite_button = button.Button((hairWhite_img.get_width()/2) - (hairWhite_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*89)+scrollWheel,hairWhite_img,1)
+        
+        eyebrow_img = pygame.image.load('images/ER_eyebrows.png').convert_alpha()
+        eyebrow_button = button.Button((eyebrow_img.get_width()/2) - (eyebrow_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*90)+scrollWheel,eyebrow_img,1)
+        brow_img = pygame.image.load('images/ER_brow.png').convert_alpha()
+        brow_button = button.Button((brow_img.get_width()/2) - (brow_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*91)+scrollWheel,brow_img,1)
+        browCol_img = pygame.image.load('images/ER_brow_col.png').convert_alpha()
+        browCol_button = button.Button((browCol_img.get_width()/2) - (browCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*92)+scrollWheel,browCol_img,1)
+        browLuster_img = pygame.image.load('images/ER_brow_luster.png').convert_alpha()
+        browLuster_button = button.Button((browLuster_img.get_width()/2) - (browLuster_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*93)+scrollWheel,browLuster_img,1)
+        browRootDark_img = pygame.image.load('images/ER_brow_root_dark.png').convert_alpha()
+        browRootDark_button = button.Button((browRootDark_img.get_width()/2) - (browRootDark_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*94)+scrollWheel,browRootDark_img,1)
+        browWhiteHairs_img = pygame.image.load('images/ER_brow_white_hairs.png').convert_alpha()
+        browWhiteHairs_button = button.Button((browWhiteHairs_img.get_width()/2) - (browWhiteHairs_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*95)+scrollWheel,browWhiteHairs_img,1)
         
         #Randomizer Results Screen
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
@@ -862,7 +893,32 @@ def main():
             hairWhite_button.draw(screen)
             screen.blit(hairWhite_results,
                         (((hairWhite_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (hairWhite_w*3) + uiOffset,
-                        213+(60*88)+(hairWhite_h/2.5)+scrollWheel))
+                        213+(60*89)+(hairWhite_h/2.5)+scrollWheel))
+            
+            ## Eyebrow Section
+            eyebrow_button.draw(screen)
+
+            brow_button.draw(screen)
+            screen.blit(brow_results,
+                        (((brow_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (brow_w*3) + uiOffset,
+                        213+(60*91)+(brow_h/2.5)+scrollWheel))
+
+            browCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            browCol_y = 401+40-(hairCol_img.get_height()/2) + (60*89)
+            browCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[9][1],(browCol_x + uiOffset,browCol_y+scrollWheel,380,31))
+            browLuster_button.draw(screen)
+            screen.blit(browLuster_results,
+                        (((browLuster_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (browLuster_w*3) + uiOffset,
+                        213+(60*93)+(browLuster_h/2.5)+scrollWheel))
+            browRootDark_button.draw(screen)
+            screen.blit(browRootDark_results,
+                        (((browRootDark_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (browRootDark_w*3) + uiOffset,
+                        213+(60*94)+(browRootDark_h/2.5)+scrollWheel))
+            browWhiteHairs_button.draw(screen)
+            screen.blit(browWhiteHairs_results,
+                        (((browWhiteHairs_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (browWhiteHairs_w*3) + uiOffset,
+                        213+(60*95)+(browWhiteHairs_h/2.5)+scrollWheel))
 
             # Randomizer Screen Title Overlay
             screen.blit(randResults_grad_title, (((resolution[0]) - (randResults_grad.get_width())),

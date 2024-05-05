@@ -251,7 +251,7 @@ class EldenRandom():
 
     #### EldenRandom.all index: 8 [8][0][0]
     def hair():
-        hairstyle = EldenRandom.eldenAttribute(32)
+        hairstyle = EldenRandom.eldenAttribute(32)+1
         hair_col = EldenRandom.eldenColor(False)
         luster = EldenRandom.eldenAttribute(255)
         root_darkness = EldenRandom.eldenAttribute(255)
