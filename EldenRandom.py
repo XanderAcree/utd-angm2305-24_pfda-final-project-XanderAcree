@@ -322,7 +322,7 @@ class EldenRandom():
 
         beard_stubble = EldenRandom.eldenAttribute(255)
         
-        output = [beard_col, beard_luster, beardRootDark, beardWhiteHairs, beard_stubble] #[10][0-4]
+        output = [beard, beard_col, beard_luster, beardRootDark, beardWhiteHairs, beard_stubble] #[10][0-4]
         return output
     ## Eyelashes
 
