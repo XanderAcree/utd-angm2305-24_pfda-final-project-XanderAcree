@@ -274,6 +274,36 @@ def main():
     lipstick_results = button_font.render(str(attributes[14][8]), True, eldenFontCol)
     lipstick_w, lipstick_h = button_font.size(str(attributes[14][8]))
 
+    tattooMark_results = button_font.render(str(attributes[15][0]), True, eldenFontCol)
+    tattooMark_w, tattooMark_h = button_font.size(str(attributes[15][0]))
+    pos_vert_results = button_font.render(str(attributes[15][2][0]), True, eldenFontCol)
+    pos_vert_w, pos_vert_h = button_font.size(str(attributes[15][2][0]))
+    pos_horiz_results = button_font.render(str(attributes[15][2][1]), True, eldenFontCol)
+    pos_horiz_w, pos_horiz_h = button_font.size(str(attributes[15][2][1]))
+    angle_results = button_font.render(str(attributes[15][2][2]), True, eldenFontCol)
+    angle_w, angle_h = button_font.size(str(attributes[15][2][2]))
+    expansion_results = button_font.render(str(attributes[15][2][3]), True, eldenFontCol)
+    expansion_w, expansion_h = button_font.size(str(attributes[15][2][3]))
+    flip_results = button_font.render(str(attributes[15][2][4]), True, eldenFontCol)
+    flip_w, flip_h = button_font.size(str(attributes[15][2][4]))
+    eyepatch_results = button_font.render(str(attributes[15][3]), True, eldenFontCol)
+    eyepatch_w, eyepatch_h = button_font.size(str(attributes[15][3]))
+
+    head_results = button_font.render(str(attributes[16][0]), True, eldenFontCol)
+    head_w, head_h = button_font.size(str(attributes[16][0]))
+    chest_results = button_font.render(str(attributes[16][1]), True, eldenFontCol)
+    chest_w, chest_h = button_font.size(str(attributes[16][1]))
+    abdomen_results = button_font.render(str(attributes[16][2]), True, eldenFontCol)
+    abdomen_w, abdomen_h = button_font.size(str(attributes[16][2]))
+    arms_results = button_font.render(str(attributes[16][3]), True, eldenFontCol)
+    arms_w, arms_h = button_font.size(str(attributes[16][3]))
+    legs_results = button_font.render(str(attributes[16][4]), True, eldenFontCol)
+    legs_w, legs_h = button_font.size(str(attributes[16][4]))
+    bodyhair_results = button_font.render(str(attributes[16][5]), True, eldenFontCol)
+    bodyhair_w, bodyhair_h = button_font.size(str(attributes[16][5]))
+    muscle_results = button_font.render(str(attributes[16][7]), True, eldenFontCol)
+    muscle_w, muscle_h = button_font.size(str(attributes[16][7]))
+
 
     #skinCol = pygame.draw.rect(screen,attributes[5],(505,401,398,31))
 
@@ -301,6 +331,9 @@ def main():
     print(f"Lower Eyeshadow Color: {attributes[14][5]}") ## LOWER EYESHADOW COLOR
     print(f"Cheeks Color: {attributes[14][7]}") ## CHEEKS COLOR
     print(f"Lipstick Color: {attributes[14][9]}") ## LIPSTICK COLOR
+    print(f"Tattoo/Mark Color: {attributes[15][1]}") ## TATTOO/MARK COLOR
+    print(f"Eyepatch Color: {attributes[15][4]}") ## EYEPATCH COLOR
+    print(f"Body Hair Color: {attributes[16][6]}") ## BODY HAIR COLOR
 
     while running:
         origin_img = pygame.image.load('images/ER_origin.png').convert_alpha()
@@ -703,13 +736,13 @@ def main():
         eyeshadowUpper_img = pygame.image.load('images/ER_eyeshadow_upper.png').convert_alpha()
         eyeshadowUpper_button = button.Button((eyeshadowUpper_img.get_width()/2) - (eyeshadowUpper_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*127)+scrollWheel,eyeshadowUpper_img,1)
-        eyeShadowUpperCol_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        eyeShadowUpperCol_img = pygame.image.load('images/ER_eyeshadow_upper_col.png').convert_alpha()
         eyeShadowUpperCol_button = button.Button((eyeShadowUpperCol_img.get_width()/2) - (eyeShadowUpperCol_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*128)+scrollWheel,eyeShadowUpperCol_img,1)
-        eyeshadowLower_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        eyeshadowLower_img = pygame.image.load('images/ER_eyeshadow_lower.png').convert_alpha()
         eyeshadowLower_button = button.Button((eyeshadowLower_img.get_width()/2) - (eyeshadowLower_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*129)+scrollWheel,eyeshadowLower_img,1)
-        eyeShadowLowerCol_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        eyeShadowLowerCol_img = pygame.image.load('images/ER_eyeshadow_lower_col.png').convert_alpha()
         eyeShadowLowerCol_button = button.Button((eyeShadowLowerCol_img.get_width()/2) - (eyeShadowLowerCol_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*130)+scrollWheel,eyeShadowLowerCol_img,1)
         cosmeticsCheeks_img = pygame.image.load('images/ER__cheeks.png').convert_alpha()
@@ -721,9 +754,73 @@ def main():
         lipstick_img = pygame.image.load('images/ER_lipstick.png').convert_alpha()
         lipstick_button = button.Button((lipstick_img.get_width()/2) - (lipstick_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*133)+scrollWheel,lipstick_img,1)
-        lipstickCol_img = pygame.image.load('images/ER_eyeliner.png').convert_alpha()
+        lipstickCol_img = pygame.image.load('images/ER_lipstick_col.png').convert_alpha()
         lipstickCol_button = button.Button((lipstickCol_img.get_width()/2) - (lipstickCol_img.get_width()/3) + (77*4) + uiOffset,
                                     213+(60*134)+scrollWheel,lipstickCol_img,1)
+        
+        #Face Misc
+        face_misc_img = pygame.image.load('images/ER_face_misc.png').convert_alpha()
+        face_misc_button = button.Button((face_misc_img.get_width()/2) - (face_misc_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*135)+scrollWheel,face_misc_img,1)
+        tattoo_mark_img = pygame.image.load('images/ER_tattoo_mark.png').convert_alpha()
+        tattoo_mark_button = button.Button((tattoo_mark_img.get_width()/2) - (tattoo_mark_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*136)+scrollWheel,tattoo_mark_img,1)
+        tattoo_mark_col_img = pygame.image.load('images/ER_tattoo_mark_col.png').convert_alpha()
+        tattoo_mark_col_button = button.Button((tattoo_mark_col_img.get_width()/2) - (tattoo_mark_col_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*137)+scrollWheel,tattoo_mark_col_img,1)
+        tweak_tattoo_mark_img = pygame.image.load('images/ER_tweak_tattoo_mark.png').convert_alpha()
+        tweak_tattoo_mark_button = button.Button((tweak_tattoo_mark_img.get_width()/2) - (tweak_tattoo_mark_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*138)+scrollWheel,tweak_tattoo_mark_img,1)
+        pos_vert_img = pygame.image.load('images/ER_pos_vert.png').convert_alpha()
+        pos_vert_button = button.Button((pos_vert_img.get_width()/2) - (pos_vert_img.get_width()/3) + (77*5) + uiOffset,
+                                    213+(60*139)+scrollWheel,pos_vert_img,1)
+        pos_horiz_img = pygame.image.load('images/ER_pos_horiz.png').convert_alpha()
+        pos_horiz_button = button.Button((pos_horiz_img.get_width()/2) - (pos_horiz_img.get_width()/3) + (77*5) + uiOffset,
+                                    213+(60*140)+scrollWheel,pos_horiz_img,1)
+        angle_img = pygame.image.load('images/ER_angle.png').convert_alpha()
+        angle_button = button.Button((angle_img.get_width()/2) - (angle_img.get_width()/3) + (77*5) + uiOffset,
+                                    213+(60*141)+scrollWheel,angle_img,1)
+        expansion_img = pygame.image.load('images/ER_expansion.png').convert_alpha()
+        expansion_button = button.Button((expansion_img.get_width()/2) - (expansion_img.get_width()/3) + (77*5) + uiOffset,
+                                    213+(60*142)+scrollWheel,expansion_img,1)
+        flip_img = pygame.image.load('images/ER_flip.png').convert_alpha()
+        flip_button = button.Button((flip_img.get_width()/2) - (flip_img.get_width()/3) + (77*5) + uiOffset,
+                                    213+(60*143)+scrollWheel,flip_img,1)
+        eyepatch_img = pygame.image.load('images/ER_eyepatch.png').convert_alpha()
+        eyepatch_button = button.Button((eyepatch_img.get_width()/2) - (eyepatch_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*144)+scrollWheel,eyepatch_img,1)
+        eyepatchCol_img = pygame.image.load('images/ER_eyepatch_col.png').convert_alpha()
+        eyepatchCol_button = button.Button((eyepatchCol_img.get_width()/2) - (eyepatchCol_img.get_width()/3) + (77*4) + uiOffset,
+                                    213+(60*145)+scrollWheel,eyepatchCol_img,1)
+        
+        #Alter Body
+        alterbody_img = pygame.image.load('images/ER_alter_body.png').convert_alpha()
+        alterbody_button = button.Button((alterbody_img.get_width()/2) - (alterbody_img.get_width()/3) + (77*2) + uiOffset,
+                                    213+(60*146)+scrollWheel,alterbody_img,1)
+        head_img = pygame.image.load('images/ER_head.png').convert_alpha()
+        head_button = button.Button((head_img.get_width()/2) - (head_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*147)+scrollWheel,head_img,1)
+        chest_img = pygame.image.load('images/ER_chest.png').convert_alpha()
+        chest_button = button.Button((chest_img.get_width()/2) - (chest_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*148)+scrollWheel,chest_img,1)
+        abdomen_img = pygame.image.load('images/ER_abdomen.png').convert_alpha()
+        abdomen_button = button.Button((abdomen_img.get_width()/2) - (abdomen_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*149)+scrollWheel,abdomen_img,1)
+        arms_img = pygame.image.load('images/ER_arms.png').convert_alpha()
+        arms_button = button.Button((arms_img.get_width()/2) - (arms_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*150)+scrollWheel,arms_img,1)
+        legs_img = pygame.image.load('images/ER_legs.png').convert_alpha()
+        legs_button = button.Button((legs_img.get_width()/2) - (legs_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*151)+scrollWheel,legs_img,1)
+        bodyhair_img = pygame.image.load('images/ER_body_hair.png').convert_alpha()
+        bodyhair_button = button.Button((bodyhair_img.get_width()/2) - (bodyhair_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*152)+scrollWheel,bodyhair_img,1)
+        bodyhairCol_img = pygame.image.load('images/ER_body_hair_col.png').convert_alpha()
+        bodyhairCol_button = button.Button((bodyhairCol_img.get_width()/2) - (bodyhairCol_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*153)+scrollWheel,bodyhairCol_img,1)
+        muscle_img = pygame.image.load('images/ER_musculature.png').convert_alpha()
+        muscle_button = button.Button((muscle_img.get_width()/2) - (muscle_img.get_width()/3) + (77*3) + uiOffset,
+                                    213+(60*154)+scrollWheel,muscle_img,1)
         
         #Randomizer Results Screen
         if randomize_button.draw(screen) == True or isRandButtonClicked == True:
@@ -1254,13 +1351,93 @@ def main():
             lipstick_button.draw(screen)
             screen.blit(lipstick_results,
                         (((lipstick_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
-                        213+(60*132)+(lipstick_h/2.5)+scrollWheel))
+                        213+(60*133)+(lipstick_h/2.5)+scrollWheel))
             lipstickCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
-            lipstickCol_y = 401+40-(lipstickCol_img.get_height()/2) + (60*(133-3))
+            lipstickCol_y = 401+40-(lipstickCol_img.get_height()/2) + (60*(134-3))
             lipstickCol_button.draw(screen)
             pygame.draw.rect(screen,attributes[14][9],(lipstickCol_x + uiOffset,lipstickCol_y+scrollWheel,380,31))
 
+            # Tattoo/Mark/Eyepatch
+            face_misc_button.draw(screen)
 
+            tattoo_mark_button.draw(screen)
+            screen.blit(tattooMark_results,
+                        (((tattoo_mark_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*136)+(eyeShadowLower_h/2.5)+scrollWheel))
+            tattooMarkCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            tattooMarkCol_y = 401+40-(lipstickCol_img.get_height()/2) + (60*(137-3))
+            tattoo_mark_col_button.draw(screen)
+            pygame.draw.rect(screen,attributes[15][1],(tattooMarkCol_x + uiOffset,tattooMarkCol_y+scrollWheel,380,31))
+
+            #--------------------------------------------------------------------------------------------------------------------
+            #Tweak Tattoo/Mark
+            tweak_tattoo_mark_button.draw(screen)
+            pos_vert_button.draw(screen)
+            screen.blit(pos_vert_results,
+                        (((pos_vert_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*5 + (199) - (39*3) + uiOffset,
+                        213+(60*139)+(pos_vert_h/2.5)+scrollWheel))
+            pos_horiz_button.draw(screen)
+            screen.blit(pos_horiz_results,
+                        (((pos_horiz_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*5 + (199) - (39*3) + uiOffset,
+                        213+(60*140)+(pos_horiz_h/2.5)+scrollWheel))
+            angle_button.draw(screen)
+            screen.blit(angle_results,
+                        (((angle_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*5 + (199) - (39*3) + uiOffset,
+                        213+(60*141)+(angle_h/2.5)+scrollWheel))
+            expansion_button.draw(screen)
+            screen.blit(expansion_results,
+                        (((expansion_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*5 + (199) - (39*3) + uiOffset,
+                        213+(60*142)+(expansion_h/2.5)+scrollWheel))
+            flip_button.draw(screen)
+            screen.blit(flip_results,
+                        (((flip_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*5 + (199) - (39*3) + uiOffset,
+                        213+(60*143)+(flip_h/2.5)+scrollWheel))
+            #--------------------------------------------------------------------------------------------------------------------
+
+            eyepatch_button.draw(screen)
+            screen.blit(eyepatch_results,
+                        (((eyepatch_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*4 + (199) - (39*3) + uiOffset,
+                        213+(60*144)+(eyepatch_h/2.5)+scrollWheel))
+            eyepatchCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*3
+            eyepatchCol_y = 401+40-(lipstickCol_img.get_height()/2) + (60*(145-3))
+            eyepatchCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[15][4],(eyepatchCol_x + uiOffset,eyepatchCol_y+scrollWheel,380,31))
+
+            #Alter Body
+            alterbody_button.draw(screen)
+
+            head_button.draw(screen)
+            screen.blit(head_results,
+                        (((head_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (39*3) + uiOffset,
+                        213+(60*147)+(head_h/2.5)+scrollWheel))
+            chest_button.draw(screen)
+            screen.blit(chest_results,
+                        (((chest_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (39*3) + uiOffset,
+                        213+(60*148)+(chest_h/2.5)+scrollWheel))
+            abdomen_button.draw(screen)
+            screen.blit(abdomen_results,
+                        (((abdomen_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (39*3) + uiOffset,
+                        213+(60*149)+(abdomen_h/2.5)+scrollWheel))
+            arms_button.draw(screen)
+            screen.blit(arms_results,
+                        (((arms_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (39*3) + uiOffset,
+                        213+(60*150)+(arms_h/2.5)+scrollWheel))
+            legs_button.draw(screen)
+            screen.blit(legs_results,
+                        (((legs_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (39*3) + uiOffset,
+                        213+(60*151)+(legs_h/2.5)+scrollWheel))
+            bodyhair_button.draw(screen)
+            screen.blit(bodyhair_results,
+                        (((bodyhair_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (39*3) + uiOffset,
+                        213+(60*152)+(bodyhair_h/2.5)+scrollWheel))
+            bodyhairCol_x = 505 - 42 + 154 + (77/2) + 5 + (77/(1))*2
+            bodyhairCol_y = 401+40-(lipstickCol_img.get_height()/2) + (60*(153-3))
+            bodyhairCol_button.draw(screen)
+            pygame.draw.rect(screen,attributes[16][6],(bodyhairCol_x + uiOffset,bodyhairCol_y+scrollWheel,380,31))
+            muscle_button.draw(screen)
+            screen.blit(muscle_results,
+                        (((muscle_img.get_width())*(1-0.44326617179)) + (77/(1-0.38693467336))*3 + (199) - (39*3) + uiOffset,
+                        213+(60*154)+(muscle_h/2.5)+scrollWheel))
             
             # Randomizer Screen Title Overlay
             screen.blit(randResults_grad_title, (((resolution[0]) - (randResults_grad.get_width())),
@@ -1294,9 +1471,11 @@ def main():
                 running = False
             if event.type == pygame.KEYDOWN and pygame.key.get_pressed()[pygame.K_q]:
                 isRandButtonClicked = False
+            if event.type == pygame.KEYDOWN and pygame.key.get_pressed()[pygame.K_ESCAPE]:
+                pygame.quit()
             if event.type == pygame.MOUSEWHEEL:
                 scrollWheel += (event.y)*25
-
+        
         pygame.display.update()
 
         # flip() to display everything on screen

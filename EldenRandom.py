@@ -448,7 +448,7 @@ class EldenRandom():
         body_hair = EldenRandom.eldenAttribute()
         match_hair = random.randrange(2)
         if match_hair == 0:
-            body_hair_col = EldenRandom.eldenColor()
+            body_hair_col = EldenRandom.eldenColor(False)
         else: 
             body_hair_col = match_case[1]
         

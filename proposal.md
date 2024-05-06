@@ -31,4 +31,4 @@ Ideal Outcome:
 
 - Week N (Final)
   1. Polishing the UI to make it more themed around Elden Ring
-  2. Making any necessary final touches on the program before submitting it to eLearning
+  2. Making any necessary final touches/changes on the program before submitting it to eLearning
